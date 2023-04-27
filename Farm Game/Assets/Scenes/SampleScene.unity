@@ -25431,9 +25431,17 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 29
     m_Data: {fileID: 11400000, guid: e51f9d6c0a5c9b8499caa41b2c169ca6, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 29
     m_Data: {fileID: 21300000, guid: 8a4269d5469342640b1950a1e689c169, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 29
     m_Data:
@@ -25459,8 +25467,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 9, y: 7, z: 1}
+  m_Origin: {x: 0, y: -1, z: 0}
+  m_Size: {x: 9, y: 8, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -26412,6 +26420,7 @@ GameObject:
   - component: {fileID: 1634016408}
   - component: {fileID: 1634016411}
   - component: {fileID: 1634016412}
+  - component: {fileID: 1634016413}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -26449,6 +26458,7 @@ MonoBehaviour:
   itemManager: {fileID: 0}
   tileManager: {fileID: 0}
   uiManager: {fileID: 0}
+  cropsManager: {fileID: 0}
   player: {fileID: 0}
 --- !u!4 &1634016410
 Transform:
@@ -26496,6 +26506,23 @@ MonoBehaviour:
   inventoryUIs:
   - {fileID: 339880601}
   - {fileID: 1959726353}
+--- !u!114 &1634016413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634016407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a17481241129e4795bd1b13a3a5e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plowed: {fileID: 11400000, guid: b5d48509b05c7984995fbedca69bee46, type: 2}
+  planted: {fileID: 11400000, guid: 362823f8d65dcd84286408640a35b8e0, type: 2}
+  targetTilemap: {fileID: 1385025025}
+  cropsSpritePrefab: {fileID: 2446911990339722175, guid: d36fabf2c2a031743a9dce588cc7c22e, type: 3}
+  toSeed: {fileID: 11400000, guid: 3600ecb2a1f9c19449724e5cea2292cb, type: 2}
 --- !u!1 &1654484425
 GameObject:
   m_ObjectHideFlags: 0

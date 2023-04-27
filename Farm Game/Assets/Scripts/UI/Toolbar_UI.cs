@@ -28,7 +28,7 @@ public class Toolbar_UI : MonoBehaviour
             }
             selectedSlot = toolbarSlots[index];
             selectedSlot.SetHighlight(true);
-            selectedSlot = toolbarSlots[index];
+            //selectedSlot = toolbarSlots[index];
         }
     }
 

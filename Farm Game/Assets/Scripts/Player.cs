@@ -18,8 +18,15 @@ public class Player : MonoBehaviour
             Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
             if(GameManager.instance.tileManager.isInteractable(position))
             {
-                Debug.Log("Tile is interactable");
-                GameManager.instance.tileManager.SetInteracted(position);
+                //Debug.Log("Tile is interactable");
+                if (GameManager.instance.tileManager.isPlowed(position))
+                {
+                    GameManager.instance.cropsManager.SetPlanted(position);
+                }
+                else
+                {
+                    GameManager.instance.tileManager.SetInteracted(position);
+                }
             }
         }
     }

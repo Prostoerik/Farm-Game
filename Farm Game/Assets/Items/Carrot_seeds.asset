@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Carrot Seeds
   icon: {fileID: -1041817706, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  crop: {fileID: 11400000, guid: 3600ecb2a1f9c19449724e5cea2292cb, type: 2}
