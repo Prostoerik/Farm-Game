@@ -11,12 +11,17 @@ public class ClickHandler : MonoBehaviour
         if (sceneIndex == 0)
         {
             Debug.Log("Нажатие на объект");
+            //SceneManager.LoadScene("Fishing", LoadSceneMode.Additive);
+            //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Fishing"));
+            //SceneManager.UnloadSceneAsync(0);
             SceneManager.LoadScene(1);
         }
         if (sceneIndex == 1)
         {
             Debug.Log("Нажатие на объект");
             SceneManager.LoadScene(0);
+            //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
+            //SceneManager.UnloadSceneAsync("Fishing");
         }
     }
 }

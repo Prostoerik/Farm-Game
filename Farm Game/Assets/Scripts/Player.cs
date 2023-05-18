@@ -19,8 +19,15 @@ public class Player : MonoBehaviour
             if(GameManager.instance.tileManager.isInteractable(position))
             {
                 //Debug.Log("Tile is interactable");
-                if (GameManager.instance.tileManager.isPlowed(position))
+                //inventory.toolbar.slots[GameManager.instance.uiManager.inventoryUIs[1].selectedSlot.slotID].itemName == "Carrot_seeds"
+                //inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot seeds"
+                if (GameManager.instance.tileManager.isPlowed(position) && inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot Seeds")
                 {
+                    inventory.toolbar.slots[GameManager.instance.selectedItemIndex].RemoveItem();
+                    //inventory.toolbar.MoveSlot(GameManager.instance.selectedItemIndex, 26, inventory.backpack);
+                    GameManager.instance.uiManager.RefreshAll();
+                    //inventory.toolbar.Remove(GameManager.instance.selectedItemIndex);
+                    //Debug.Log(inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName); 
                     GameManager.instance.cropsManager.SetPlanted(position);
                 }
                 else

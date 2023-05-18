@@ -22,12 +22,14 @@ public class Toolbar_UI : MonoBehaviour
     {
         if(toolbarSlots.Count == 9)
         {
-            if(selectedSlot != null)
+            if (selectedSlot != null)
             {
                 selectedSlot.SetHighlight(false);
             }
             selectedSlot = toolbarSlots[index];
             selectedSlot.SetHighlight(true);
+            //Debug.Log(selectedSlot.inventory.slots[selectedSlot.slotID].itemName);
+            GameManager.instance.selectedItemIndex = selectedSlot.slotID;
             //selectedSlot = toolbarSlots[index];
         }
     }

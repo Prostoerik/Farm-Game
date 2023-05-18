@@ -33,6 +33,13 @@ public class Hook : MonoBehaviour
     {
         if (!catchingFish)
         {
+            SpriteRenderer sourceSpriteRenderer = fish.GetComponent<SpriteRenderer>();
+            SpriteRenderer targetSpriteRenderer = fishOnHook.GetComponent<SpriteRenderer>();
+
+            if (sourceSpriteRenderer != null && targetSpriteRenderer != null)
+            {
+                targetSpriteRenderer.sprite = sourceSpriteRenderer.sprite;
+            }
             fishOnHook.SetActive(true);
             catchingFish = true;
             Destroy(fish);

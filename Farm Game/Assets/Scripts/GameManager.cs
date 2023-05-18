@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
+    public int selectedItemIndex;
+
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
         tileManager = GetComponent<TileManager>();
         uiManager = GetComponent<UI_Manager>();
         cropsManager = GetComponent<CropsManager>();
+        selectedItemIndex = 0;
 
         player = FindObjectOfType<Player>();
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7751976992702510347}
   - component: {fileID: 3509313535737282543}
   m_Layer: 0
-  m_Name: fish
+  m_Name: Guppy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 628570734, guid: ac066482b851b8245be3bc85700e1f5e, type: 3}
+  m_Sprite: {fileID: -30176241, guid: ac066482b851b8245be3bc85700e1f5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,6 +121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
+  MoveLine: 0
+  amplitude: 0.5
+  frequency: 1
 --- !u!61 &3509313535737282543
 BoxCollider2D:
   m_ObjectHideFlags: 0

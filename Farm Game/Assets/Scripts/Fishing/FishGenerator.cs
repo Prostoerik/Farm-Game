@@ -4,28 +4,35 @@ using UnityEngine;
 
 public class FishGenerator : MonoBehaviour
 {
-    public GameObject fishPrefab;
+    public GameObject[] fishPrefab;
 
     void Start()
     {
         StartCoroutine(createFish());
     }
 
-    void Update()
-    {
-
-    }
-
     private IEnumerator createFish()
     {
         yield return new WaitForSeconds(Random.Range(1f, 4f));
 
-        GameObject fish = Instantiate(fishPrefab);
+        int fishIndex = Random.Range(0, fishPrefab.Length);
+        GameObject fish = Instantiate(fishPrefab[fishIndex]);
 
+        bool line = Random.Range(0, 2) == 1;
+        fish.GetComponent<Fish>().MoveLine = line;
         bool rightFish = Random.Range(0, 2) == 1;
 
-        float y = Random.Range(-4.59f, -0.3f);
+        float y;
         float x;
+
+        if (line)
+        {
+            y = Random.Range(-4.59f, -0.3f);
+        }
+        else
+        {
+            y = Random.Range(-3.59f, -1.3f);
+        }
 
         if (rightFish)
         {
