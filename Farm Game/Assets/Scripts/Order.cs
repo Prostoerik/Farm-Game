@@ -11,8 +11,17 @@ public class Order : MonoBehaviour
     List<TextMeshProUGUI> productCount;
 
     List<Item> required = new List<Item>();
+
+    List<string> requiredItemNames = new List<string>();
+    List<int> requiredItemCount = new List<int>();
+
+    Dictionary<int, int> inventoryRemoveItems = new Dictionary<int, int>();
+    Dictionary<int, int> toolbarRemoveItems = new Dictionary<int, int>();
+
     public List<Item> items;
     public Sprite empty;
+    public Player player;
+    public Button sellButton;
 
     void Start()
     {
@@ -28,28 +37,146 @@ public class Order : MonoBehaviour
             productCount[i].text = "";
         }
 
-        //GetComponentInChildren<Button>().onClick.AddListener(delegate { completeOrder(); });
+        sellButton.onClick.AddListener(delegate { completeOrder(); });
 
         createOrder();
     }
 
     private void createOrder()
     {
-        required.Add(items[0]);
-        required.Add(items[1]);
+        int numItemsToSelect = 2;
+        List<int> selectedIndexes = new List<int>();
+
+        while (required.Count < numItemsToSelect)
+        {
+            int randomIndex = Random.Range(0, items.Count); 
+
+            if (!selectedIndexes.Contains(randomIndex))
+            {
+                required.Add(items[randomIndex]);
+                selectedIndexes.Add(randomIndex);
+            }
+        }
+
+        for (int i = 0; i < required.Count; i++)
+        {
+            requiredItemNames.Add(required[i].data.itemName);
+
+            int randomCount = Random.Range(1, 4);
+            requiredItemCount.Add(randomCount);
+        }
 
         for (int i = 0; i < required.Count; i++)
         {
             if (i == 0) productImages[i + 2].sprite = required[i].data.icon;
             else productImages[i + 3].sprite = required[i].data.icon;
-            //productCount[i + 2].Quantity = "x" + required[i].count.ToString();
-            productCount[i].text = "1";
+            productCount[i].text = requiredItemCount[i].ToString();
         }
-
     }
 
     private void completeOrder()
     {
+        if (isEnoughItems())
+        {
+            Debug.Log("Достаточно");
+            foreach (var v in inventoryRemoveItems)
+            {
+                player.inventory.backpack.Remove(v.Key, v.Value);
+            }
+            foreach (var v in toolbarRemoveItems)
+            {
+                player.inventory.toolbar.Remove(v.Key, v.Value);
+            }
+            GameManager.instance.uiManager.RefreshAll();
 
+            refreshOrder();
+        }
+        else
+        {
+            Debug.Log("Нет");
+        }
+    }
+
+    private void refreshOrder()
+    {
+        required.Clear();
+
+        requiredItemNames.Clear();
+        requiredItemCount.Clear();
+
+        inventoryRemoveItems.Clear();
+        toolbarRemoveItems.Clear();
+
+        for (int i = 2; i < productImages.Count; i += 2)
+        {
+            productImages[i].sprite = empty;
+        }
+        for (int i = 0; i < productCount.Count; i++)
+        {
+            productCount[i].text = "";
+        }
+
+        createOrder();
+    }
+
+    public bool isEnoughItems()
+    {
+        Dictionary<string, int> tempInv = new Dictionary<string, int>();
+
+        foreach (var v in requiredItemNames)
+        {
+            tempInv.Add(v, 0);
+        }
+
+        int j = 0;
+        foreach (var v in requiredItemNames)
+        {
+            for (int i = 0; i < 27; i++)
+            {
+                if (!player.inventory.backpack.slots[i].IsEmpty && player.inventory.backpack.slots[i].itemName == v)
+                {
+                    if (tempInv[v] == requiredItemCount[j]) break;
+                    if (requiredItemCount[j] - tempInv[v] > player.inventory.backpack.slots[i].count)
+                    {
+                        inventoryRemoveItems.Add(i, player.inventory.backpack.slots[i].count);
+                        tempInv[v] += player.inventory.backpack.slots[i].count;
+                    }
+                    else
+                    {
+                        inventoryRemoveItems.Add(i, requiredItemCount[j] - tempInv[v]);
+                        tempInv[v] += requiredItemCount[j] - tempInv[v];
+                    }
+                }
+            }
+            if (tempInv[v] != requiredItemCount[j])
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    if (!player.inventory.toolbar.slots[i].IsEmpty && player.inventory.toolbar.slots[i].itemName == v)
+                    {
+                        if (tempInv[v] == requiredItemCount[j]) break;
+                        if (requiredItemCount[j] - tempInv[v] > player.inventory.toolbar.slots[i].count)
+                        {
+                            toolbarRemoveItems.Add(i, player.inventory.toolbar.slots[i].count);
+                            tempInv[v] += player.inventory.toolbar.slots[i].count;
+                        }
+                        else
+                        {
+                            toolbarRemoveItems.Add(i, requiredItemCount[j] - tempInv[v]);
+                            tempInv[v] += requiredItemCount[j] - tempInv[v];
+                        }
+                    }
+                }
+            }
+            if (tempInv[v] != requiredItemCount[j]) {
+
+                inventoryRemoveItems.Clear();
+                toolbarRemoveItems.Clear();
+                return false; 
+            }
+            j++;
+        }
+
+        return true;
     }
 }

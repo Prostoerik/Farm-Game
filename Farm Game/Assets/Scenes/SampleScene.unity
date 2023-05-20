@@ -800,6 +800,8 @@ MonoBehaviour:
   - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
   - {fileID: 5104115522142580417, guid: b350817f980cd6a42bb7cd537f984129, type: 3}
   empty: {fileID: 21300000, guid: 694cf23023d647b45aa2b3ae724d42c0, type: 3}
+  player: {fileID: 1975870521}
+  sellButton: {fileID: 1059698545}
 --- !u!1001 &210651715
 PrefabInstance:
   m_ObjectHideFlags: 0

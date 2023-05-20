@@ -18,7 +18,7 @@ public class Inventory
         {
             itemName = "";
             count = 0;
-            maxAllowed = 99;
+            maxAllowed = 999;
         }
 
         public bool IsEmpty
