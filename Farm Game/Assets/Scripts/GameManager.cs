@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public TileManager tileManager;
     public UI_Manager uiManager;
     public CropsManager cropsManager;
+    public LevelManager lvlManager;
 
     public Player player;
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
         tileManager = GetComponent<TileManager>();
         uiManager = GetComponent<UI_Manager>();
         cropsManager = GetComponent<CropsManager>();
+        lvlManager = GetComponent<LevelManager>();
         selectedItemIndex = 0;
 
         player = FindObjectOfType<Player>();

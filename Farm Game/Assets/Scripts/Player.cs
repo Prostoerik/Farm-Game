@@ -6,9 +6,27 @@ public class Player : MonoBehaviour
 {
     public InventoryManager inventory;
 
+    public static int lvl;
+    public static float lvlProgress;
+    public static float[] expMultiplier = new float[8];
+
     private void Awake()
     {
         inventory = GetComponent<InventoryManager>();
+    }
+
+    private void Start()
+    {
+        lvl = 1;
+        lvlProgress = 0;
+        expMultiplier[1] = 0.04f;
+        expMultiplier[2] = 0.03f;
+        expMultiplier[3] = 0.03f;
+        expMultiplier[4] = 0.02f;
+        expMultiplier[5] = 0.02f;
+        expMultiplier[6] = 0.01f;
+        expMultiplier[7] = 0.01f;
+        GameManager.instance.lvlManager.levelUpdate();
     }
 
     private void Update()
@@ -36,6 +54,24 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static void addExp(int exp)
+    {
+        lvlProgress += exp * expMultiplier[lvl];
+
+        while (lvlProgress >= 1)
+        {
+            lvl++;
+            lvlProgress--;
+        }
+        //if (lvlProgress >= 1)
+        //{
+        //    lvl++;
+        //    lvlProgress = 0;
+        //}
+
+        GameManager.instance.lvlManager.levelUpdate();
     }
 
     public void DropItem(Item item)

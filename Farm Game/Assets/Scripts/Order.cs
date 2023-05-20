@@ -22,6 +22,7 @@ public class Order : MonoBehaviour
     public Sprite empty;
     public Player player;
     public Button sellButton;
+    public Button changeButton;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class Order : MonoBehaviour
         }
 
         sellButton.onClick.AddListener(delegate { completeOrder(); });
+        changeButton.onClick.AddListener(delegate { changeOrder(); });
 
         createOrder();
     }
@@ -88,13 +90,18 @@ public class Order : MonoBehaviour
                 player.inventory.toolbar.Remove(v.Key, v.Value);
             }
             GameManager.instance.uiManager.RefreshAll();
-
+            Player.addExp(1005);
             refreshOrder();
         }
         else
         {
             Debug.Log("Нет");
         }
+    }
+
+    private void changeOrder()
+    {
+        refreshOrder();
     }
 
     private void refreshOrder()

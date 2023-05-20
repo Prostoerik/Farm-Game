@@ -49,6 +49,6 @@ public class Hook : MonoBehaviour
     private void addScore()
     {
         scoreInt++;
-        score.text = "Кол-во рыб: " + scoreInt;
+        score.text = "Fishes:" + scoreInt;
     }
 }
