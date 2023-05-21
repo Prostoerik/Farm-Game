@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Desk : MonoBehaviour
+public class Market : MonoBehaviour
 {
     private GameObject player;
-    private SpriteRenderer deskSpriteRenderer;
+    private SpriteRenderer marketSpriteRenderer;
     private bool allowClick = false;
 
     public Sprite NonclickableSprite;
@@ -15,7 +15,7 @@ public class Desk : MonoBehaviour
 
     void Start()
     {
-        deskSpriteRenderer = this.GetComponent<SpriteRenderer>();
+        marketSpriteRenderer = this.GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("Player");
         elementToOpen.SetActive(false);
     }
@@ -33,12 +33,12 @@ public class Desk : MonoBehaviour
         if (Vector3.Distance(this.transform.position, player.transform.position) < 3.5f)
         {
             allowClick = true;
-            deskSpriteRenderer.sprite = ClickableSprite;
+            marketSpriteRenderer.sprite = ClickableSprite;
         }
         else
         {
             allowClick = false;
-            deskSpriteRenderer.sprite = NonclickableSprite;
+            marketSpriteRenderer.sprite = NonclickableSprite;
         }
     }
 }

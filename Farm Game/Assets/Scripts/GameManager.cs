@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public UI_Manager uiManager;
     public CropsManager cropsManager;
     public LevelManager lvlManager;
+    public MoneyManager moneyManager;
 
     public Player player;
 
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         uiManager = GetComponent<UI_Manager>();
         cropsManager = GetComponent<CropsManager>();
         lvlManager = GetComponent<LevelManager>();
+        moneyManager = GetComponent<MoneyManager>();
         selectedItemIndex = 0;
 
         player = FindObjectOfType<Player>();

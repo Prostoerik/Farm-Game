@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public static int lvl;
     public static float lvlProgress;
     public static float[] expMultiplier = new float[8];
+    public static int money = 200;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
         expMultiplier[6] = 0.01f;
         expMultiplier[7] = 0.01f;
         GameManager.instance.lvlManager.levelUpdate();
+        GameManager.instance.moneyManager.moneyUpdate();
     }
 
     private void Update()
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
                 //Debug.Log("Tile is interactable");
                 //inventory.toolbar.slots[GameManager.instance.uiManager.inventoryUIs[1].selectedSlot.slotID].itemName == "Carrot_seeds"
                 //inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot seeds"
-                if (GameManager.instance.tileManager.isPlowed(position) && inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot Seeds")
+                if (GameManager.instance.tileManager.isPlowed(position) && inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot seeds")
                 {
                     inventory.toolbar.slots[GameManager.instance.selectedItemIndex].RemoveItem();
                     //inventory.toolbar.MoveSlot(GameManager.instance.selectedItemIndex, 26, inventory.backpack);
@@ -65,11 +67,6 @@ public class Player : MonoBehaviour
             lvl++;
             lvlProgress--;
         }
-        //if (lvlProgress >= 1)
-        //{
-        //    lvl++;
-        //    lvlProgress = 0;
-        //}
 
         GameManager.instance.lvlManager.levelUpdate();
     }

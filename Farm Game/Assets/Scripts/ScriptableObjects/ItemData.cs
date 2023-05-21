@@ -8,4 +8,7 @@ public class ItemData : ScriptableObject
     public string itemName = "Item Name";
     public Sprite icon;
     public Crop crop;
+    public int sellPrice;
+    public int buyPrice;
+    public int openingLevel;
 }
