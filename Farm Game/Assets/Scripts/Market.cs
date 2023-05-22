@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Market : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Market : MonoBehaviour
     public Sprite ClickableSprite;
 
     public GameObject elementToOpen;
+    public Button buttonToInvoke;
 
     void Start()
     {
@@ -22,9 +24,11 @@ public class Market : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (allowClick)
+        if (allowClick && !GameManager.instance.isDeskOpen && !GameManager.instance.isInventoryOpen && !GameManager.instance.isMarketOpen)
         {
             elementToOpen.SetActive(true);
+            GameManager.instance.isMarketOpen = true;
+            buttonToInvoke.onClick.Invoke();
         }
     }
 

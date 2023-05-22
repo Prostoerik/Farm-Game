@@ -50,7 +50,7 @@ public class Purchase : MonoBehaviour
 
         for (int i = 0; i < productPrices.Count; i++)
         {
-            productPrices[i].text = itemsToSell[i].data.sellPrice.ToString();
+            productPrices[i].text = itemsToSell[i].data.buyPrice.ToString();
         }
 
         List<Button> buttons = GetComponentsInChildren<Button>().ToList();

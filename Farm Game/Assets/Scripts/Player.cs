@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     public static int lvl;
     public static float lvlProgress;
-    public static float[] expMultiplier = new float[8];
+    public static float[] expMultiplier = new float[100];
     public static int money = 200;
 
     private void Awake()
@@ -20,13 +20,17 @@ public class Player : MonoBehaviour
     {
         lvl = 1;
         lvlProgress = 0;
-        expMultiplier[1] = 0.04f;
-        expMultiplier[2] = 0.03f;
-        expMultiplier[3] = 0.03f;
+        expMultiplier[1] = 0.1f;
+        expMultiplier[2] = 0.07f;
+        expMultiplier[3] = 0.04f;
         expMultiplier[4] = 0.02f;
         expMultiplier[5] = 0.02f;
         expMultiplier[6] = 0.01f;
         expMultiplier[7] = 0.01f;
+        for (int i = 8; i < expMultiplier.Length; i++)
+        {
+            expMultiplier[i] = 1f / i;
+        }
         GameManager.instance.lvlManager.levelUpdate();
         GameManager.instance.moneyManager.moneyUpdate();
     }
@@ -61,7 +65,7 @@ public class Player : MonoBehaviour
     public static void addExp(int exp)
     {
         lvlProgress += exp * expMultiplier[lvl];
-
+        
         while (lvlProgress >= 1)
         {
             lvl++;

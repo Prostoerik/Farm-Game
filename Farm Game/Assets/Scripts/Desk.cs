@@ -22,9 +22,10 @@ public class Desk : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (allowClick)
+        if (allowClick && !GameManager.instance.isMarketOpen && !GameManager.instance.isInventoryOpen && !GameManager.instance.isDeskOpen)
         {
             elementToOpen.SetActive(true);
+            GameManager.instance.isDeskOpen = true;
         }
     }
 

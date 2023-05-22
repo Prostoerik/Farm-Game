@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
 
     public void levelUpdate()
     {
-        if (Player.lvl != int.Parse(levelText.text)) ;
+        if (Player.lvl != int.Parse(levelText.text)) 
         {
             levelText.text = Player.lvl.ToString();
         }

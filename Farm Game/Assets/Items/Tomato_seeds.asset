@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tomato seeds
   icon: {fileID: -837797513, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  crop: {fileID: 0}
+  sellPrice: 2
+  buyPrice: 2
+  openingLevel: 1

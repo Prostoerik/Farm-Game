@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Carrot seeds
   icon: {fileID: -1041817706, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
   crop: {fileID: 11400000, guid: 3600ecb2a1f9c19449724e5cea2292cb, type: 2}
-  sellPrice: 0
-  buyPrice: 0
-  openingLevel: 0
+  sellPrice: 2
+  buyPrice: 2
+  openingLevel: 1

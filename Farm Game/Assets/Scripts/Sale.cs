@@ -14,7 +14,9 @@ public class Sale : MonoBehaviour
     List<string> inventoryItemsNames = new List<string>();
     List<List<itemLoc>> inventoryItemsLocs = new List<List<itemLoc>>();
 
-    List<string> itemsToSellNames;
+    private int selectedIndex = -1;
+
+    List<string> itemsToSellNames = new List<string>();
 
     public GameObject panel;
     public GameObject saleSlot;
@@ -23,12 +25,16 @@ public class Sale : MonoBehaviour
 
     public Player player;
     public Sprite empty;
+    public Button sellButton;
+
+    public TextMeshProUGUI selectedItem;
+    public TextMeshProUGUI balance;
 
     private class itemLoc
     {
-        string inv;
-        int index;
-        int count;
+        public string inv;
+        public int index;
+        public int count;
 
         public itemLoc(string inv, int index, int count)
         {
@@ -40,45 +46,60 @@ public class Sale : MonoBehaviour
 
     void Start()
     {
-        //foreach (Item item in itemsToSell)
-        //{
-        //    itemsToSellNames.Add(item.data.itemName);
-        //}
+        foreach (Item item in itemsToSell)
+        {
+            itemsToSellNames.Add(item.data.itemName);
+        }
 
-        //refreshItemsForSale();
+        sellButton.onClick.AddListener(delegate { sellProduct(); });
+
+        refreshItemsForSale();
     }
 
     public void refreshItemsForSale()
     {
+        foreach (Transform child in panel.transform)
+        {
+            GameObject.Destroy(child.gameObject, 0);
+        }
+
+        selectedIndex = -1;
+
         inventoryItems.Clear();
         inventoryItemsNames.Clear();
         inventoryItemsLocs.Clear();
         for (int i = 0; i < 27; i++)
         {
-            if (!inventoryItems.ContainsKey(player.inventory.backpack.slots[i].itemName))
+            if (!player.inventory.backpack.slots[i].IsEmpty)
             {
-                inventoryItems.Add(player.inventory.backpack.slots[i].itemName, player.inventory.backpack.slots[i].count);
-                inventoryItemsNames.Add(player.inventory.backpack.slots[i].itemName);
-                inventoryItemsLocs.Add(new List<itemLoc>() { new itemLoc("backpack", i, player.inventory.backpack.slots[i].count) });
-            }
-            else
-            {
-                inventoryItems[player.inventory.backpack.slots[i].itemName] += player.inventory.backpack.slots[i].count;
-                inventoryItemsLocs[inventoryItemsNames.IndexOf(player.inventory.backpack.slots[i].itemName)].Add(new itemLoc("backpack", i, player.inventory.backpack.slots[i].count));
+                if (!inventoryItems.ContainsKey(player.inventory.backpack.slots[i].itemName))
+                {
+                    inventoryItems.Add(player.inventory.backpack.slots[i].itemName, player.inventory.backpack.slots[i].count);
+                    inventoryItemsNames.Add(player.inventory.backpack.slots[i].itemName);
+                    inventoryItemsLocs.Add(new List<itemLoc>() { new itemLoc("backpack", i, player.inventory.backpack.slots[i].count) });
+                }
+                else
+                {
+                    inventoryItems[player.inventory.backpack.slots[i].itemName] += player.inventory.backpack.slots[i].count;
+                    inventoryItemsLocs[inventoryItemsNames.IndexOf(player.inventory.backpack.slots[i].itemName)].Add(new itemLoc("backpack", i, player.inventory.backpack.slots[i].count));
+                }
             }
         }
         for (int i = 0; i < 9; i++)
         {
-            if (!inventoryItems.ContainsKey(player.inventory.toolbar.slots[i].itemName))
+            if (!player.inventory.toolbar.slots[i].IsEmpty)
             {
-                inventoryItems.Add(player.inventory.toolbar.slots[i].itemName, player.inventory.toolbar.slots[i].count);
-                inventoryItemsNames.Add(player.inventory.toolbar.slots[i].itemName);
-                inventoryItemsLocs.Add(new List<itemLoc>() { new itemLoc("toolbar", i, player.inventory.toolbar.slots[i].count) } );
-            }
-            else
-            {
-                inventoryItems[player.inventory.toolbar.slots[i].itemName] += player.inventory.toolbar.slots[i].count;
-                inventoryItemsLocs[inventoryItemsNames.IndexOf(player.inventory.toolbar.slots[i].itemName)].Add(new itemLoc("toolbar", i, player.inventory.toolbar.slots[i].count));
+                if (!inventoryItems.ContainsKey(player.inventory.toolbar.slots[i].itemName))
+                {
+                    inventoryItems.Add(player.inventory.toolbar.slots[i].itemName, player.inventory.toolbar.slots[i].count);
+                    inventoryItemsNames.Add(player.inventory.toolbar.slots[i].itemName);
+                    inventoryItemsLocs.Add(new List<itemLoc>() { new itemLoc("toolbar", i, player.inventory.toolbar.slots[i].count) });
+                }
+                else
+                {
+                    inventoryItems[player.inventory.toolbar.slots[i].itemName] += player.inventory.toolbar.slots[i].count;
+                    inventoryItemsLocs[inventoryItemsNames.IndexOf(player.inventory.toolbar.slots[i].itemName)].Add(new itemLoc("toolbar", i, player.inventory.toolbar.slots[i].count));
+                }
             }
         }
 
@@ -94,17 +115,80 @@ public class Sale : MonoBehaviour
             index++;
         }
 
+        StartCoroutine(GetProductImagesNextFrame());
+    }
+
+    private IEnumerator GetProductImagesNextFrame()
+    {
+        yield return null; // ќжидание следующего кадра
+
         productImages = GetComponentsInChildren<Image>().ToList();
         productPrices = GetComponentsInChildren<TextMeshProUGUI>().ToList();
 
-        for (int i = 1, j = 0; i < inventoryItems.Count; i += 2, j++)
+        for (int i = 1, j = 0; j < inventoryItems.Count; i += 2, j++)
         {
             productImages[i].sprite = itemsToSell[itemsToSellNames.IndexOf(inventoryItemsNames[j])].data.icon;
         }
 
         for (int i = 0; i < inventoryItems.Count; i++)
         {
-            productPrices[i].text = itemsToSell[itemsToSellNames.IndexOf(inventoryItemsNames[i])].data.sellPrice.ToString();
+            productPrices[i].text = (itemsToSell[itemsToSellNames.IndexOf(inventoryItemsNames[i])].data.sellPrice / 2).ToString();
+        }
+
+        List<Button> buttons = GetComponentsInChildren<Button>().ToList();
+        foreach (Button b in buttons)
+        {
+            b.onClick.AddListener(delegate { selectProduct(b); });
+        }
+        selectedItem.text = "";
+    }
+
+    public void sellProduct()
+    {
+        if (selectedIndex != -1)
+        {
+            foreach (itemLoc item in inventoryItemsLocs[selectedIndex])
+            {
+                if (item.count > 0)
+                {
+                    if (item.inv == "backpack")
+                    {
+                        player.inventory.backpack.Remove(item.index);
+                    }
+                    else
+                    {
+                        player.inventory.toolbar.Remove(item.index);
+                    }
+                    inventoryItems[inventoryItemsNames[selectedIndex]]--;
+                    item.count--;
+                    GameManager.instance.uiManager.RefreshAll();
+                    GameManager.instance.moneyManager.addMoney(int.Parse(productPrices[selectedIndex].text));
+                    if (item == inventoryItemsLocs[selectedIndex][inventoryItemsLocs[selectedIndex].Count - 1] && inventoryItems[inventoryItemsNames[selectedIndex]] == 0)
+                    {
+                        refreshItemsForSale();
+                        return;
+                    }
+                    return;
+                }
+                else 
+                {
+                    if (item == inventoryItemsLocs[selectedIndex][inventoryItemsLocs[selectedIndex].Count - 1])
+                    {
+                        refreshItemsForSale();
+                        return;
+                    }
+                    continue;
+                }
+            }
+        }
+    }
+
+    private void selectProduct(Button button)
+    {
+        if (selectedIndex != int.Parse(button.GetComponentInChildren<Text>().text))
+        {
+            selectedIndex = int.Parse(button.GetComponentInChildren<Text>().text);
+            selectedItem.text = itemsToSell[itemsToSellNames.IndexOf(inventoryItemsNames[selectedIndex])].data.itemName;
         }
     }
 }

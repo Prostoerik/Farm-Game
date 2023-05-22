@@ -11,12 +11,11 @@ public class MoneyManager : MonoBehaviour
 
     public void moneyUpdate()
     {
-        if (Player.money != int.Parse(moneyText.text.Substring(0, moneyText.text.Length - 1))) ;
+        if (Player.money != int.Parse(moneyText.text.Substring(0, moneyText.text.Length - 1))) 
         {
             moneyText.text = Player.money.ToString() + "$";
             marketBalance.text = moneyText.text;
         }
-
     }
 
     public void addMoney(int amount)

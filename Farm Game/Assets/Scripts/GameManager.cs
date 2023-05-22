@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
 
     public int selectedItemIndex;
 
+    public bool isInventoryOpen;
+    public bool isDeskOpen;
+    public bool isMarketOpen;
+
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -37,6 +41,9 @@ public class GameManager : MonoBehaviour
         lvlManager = GetComponent<LevelManager>();
         moneyManager = GetComponent<MoneyManager>();
         selectedItemIndex = 0;
+        isInventoryOpen = false;
+        isDeskOpen = false;
+        isMarketOpen = false;
 
         player = FindObjectOfType<Player>();
     }
