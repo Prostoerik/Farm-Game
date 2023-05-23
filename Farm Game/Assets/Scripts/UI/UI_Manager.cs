@@ -23,7 +23,7 @@ public class UI_Manager : MonoBehaviour
 
     private void Update()
     {
-        if((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.B)) && !GameManager.instance.isDeskOpen && !GameManager.instance.isMarketOpen)
+        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.B))
         {
             ToggleInventoryUI();
         }
@@ -45,13 +45,11 @@ public class UI_Manager : MonoBehaviour
             if (!inventoryPanel.activeSelf)
             {
                 inventoryPanel.SetActive(true);
-                GameManager.instance.isInventoryOpen = true;
                 RefreshInventoryUI("Backpack");
             }
             else
             {
                 inventoryPanel.SetActive(false);
-                GameManager.instance.isInventoryOpen = false;
             }
         }
     }

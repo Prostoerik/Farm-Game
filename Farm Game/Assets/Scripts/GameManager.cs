@@ -11,15 +11,10 @@ public class GameManager : MonoBehaviour
     public UI_Manager uiManager;
     public CropsManager cropsManager;
     public LevelManager lvlManager;
-    public MoneyManager moneyManager;
 
     public Player player;
 
     public int selectedItemIndex;
-
-    public bool isInventoryOpen;
-    public bool isDeskOpen;
-    public bool isMarketOpen;
 
     private void Awake()
     {
@@ -39,11 +34,7 @@ public class GameManager : MonoBehaviour
         uiManager = GetComponent<UI_Manager>();
         cropsManager = GetComponent<CropsManager>();
         lvlManager = GetComponent<LevelManager>();
-        moneyManager = GetComponent<MoneyManager>();
         selectedItemIndex = 0;
-        isInventoryOpen = false;
-        isDeskOpen = false;
-        isMarketOpen = false;
 
         player = FindObjectOfType<Player>();
     }

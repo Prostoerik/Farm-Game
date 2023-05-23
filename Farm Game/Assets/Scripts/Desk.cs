@@ -5,6 +5,7 @@ using UnityEngine;
 public class Desk : MonoBehaviour
 {
     private GameObject player;
+    private GameObject inventory;
     private SpriteRenderer deskSpriteRenderer;
     private bool allowClick = false;
 
@@ -13,19 +14,20 @@ public class Desk : MonoBehaviour
 
     public GameObject elementToOpen;
 
+    // Start is called before the first frame update
     void Start()
     {
         deskSpriteRenderer = this.GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("Player");
         elementToOpen.SetActive(false);
+        //inventory = GameObject.FindWithTag("Inventory");
     }
 
     void OnMouseDown()
     {
-        if (allowClick && !GameManager.instance.isMarketOpen && !GameManager.instance.isInventoryOpen && !GameManager.instance.isDeskOpen)
+        if (allowClick)
         {
             elementToOpen.SetActive(true);
-            GameManager.instance.isDeskOpen = true;
         }
     }
 

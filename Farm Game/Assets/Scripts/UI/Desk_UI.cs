@@ -16,7 +16,6 @@ public class Desk_UI : MonoBehaviour
         if (desk != null)
         {
             desk.SetActive(false);
-            GameManager.instance.isDeskOpen = false;
         }
     }
 }

@@ -27,7 +27,6 @@ public class Inventory_UI : MonoBehaviour
         if (inventoryPanel != null)
         {
             inventoryPanel.SetActive(false);
-            GameManager.instance.isInventoryOpen = false;
         }
     }
 

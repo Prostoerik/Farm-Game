@@ -8,8 +8,7 @@ public class Player : MonoBehaviour
 
     public static int lvl;
     public static float lvlProgress;
-    public static float[] expMultiplier = new float[100];
-    public static int money = 200;
+    public static float[] expMultiplier = new float[8];
 
     private void Awake()
     {
@@ -20,19 +19,14 @@ public class Player : MonoBehaviour
     {
         lvl = 1;
         lvlProgress = 0;
-        expMultiplier[1] = 0.1f;
-        expMultiplier[2] = 0.07f;
-        expMultiplier[3] = 0.04f;
+        expMultiplier[1] = 0.04f;
+        expMultiplier[2] = 0.03f;
+        expMultiplier[3] = 0.03f;
         expMultiplier[4] = 0.02f;
         expMultiplier[5] = 0.02f;
         expMultiplier[6] = 0.01f;
         expMultiplier[7] = 0.01f;
-        for (int i = 8; i < expMultiplier.Length; i++)
-        {
-            expMultiplier[i] = 1f / i;
-        }
         GameManager.instance.lvlManager.levelUpdate();
-        GameManager.instance.moneyManager.moneyUpdate();
     }
 
     private void Update()
@@ -45,7 +39,7 @@ public class Player : MonoBehaviour
                 //Debug.Log("Tile is interactable");
                 //inventory.toolbar.slots[GameManager.instance.uiManager.inventoryUIs[1].selectedSlot.slotID].itemName == "Carrot_seeds"
                 //inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot seeds"
-                if (GameManager.instance.tileManager.isPlowed(position) && inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot seeds")
+                if (GameManager.instance.tileManager.isPlowed(position) && inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot Seeds")
                 {
                     inventory.toolbar.slots[GameManager.instance.selectedItemIndex].RemoveItem();
                     //inventory.toolbar.MoveSlot(GameManager.instance.selectedItemIndex, 26, inventory.backpack);
@@ -65,12 +59,17 @@ public class Player : MonoBehaviour
     public static void addExp(int exp)
     {
         lvlProgress += exp * expMultiplier[lvl];
-        
+
         while (lvlProgress >= 1)
         {
             lvl++;
             lvlProgress--;
         }
+        //if (lvlProgress >= 1)
+        //{
+        //    lvl++;
+        //    lvlProgress = 0;
+        //}
 
         GameManager.instance.lvlManager.levelUpdate();
     }

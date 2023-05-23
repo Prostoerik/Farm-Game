@@ -11,7 +11,6 @@ public class Order : MonoBehaviour
     List<TextMeshProUGUI> productCount;
 
     List<Item> required = new List<Item>();
-    int reward = 0;
 
     List<string> requiredItemNames = new List<string>();
     List<int> requiredItemCount = new List<int>();
@@ -24,7 +23,6 @@ public class Order : MonoBehaviour
     public Player player;
     public Button sellButton;
     public Button changeButton;
-    public TextMeshProUGUI rewardText;
 
     void Start()
     {
@@ -50,7 +48,6 @@ public class Order : MonoBehaviour
     {
         int numItemsToSelect = 2;
         List<int> selectedIndexes = new List<int>();
-        reward = 0;
 
         while (required.Count < numItemsToSelect)
         {
@@ -77,12 +74,6 @@ public class Order : MonoBehaviour
             else productImages[i + 3].sprite = required[i].data.icon;
             productCount[i].text = requiredItemCount[i].ToString();
         }
-
-        for (int i = 0; i < required.Count; i++)
-        {
-            reward += required[i].data.sellPrice * requiredItemCount[i];
-        }
-        rewardText.text = reward + "$";
     }
 
     private void completeOrder()
@@ -99,8 +90,7 @@ public class Order : MonoBehaviour
                 player.inventory.toolbar.Remove(v.Key, v.Value);
             }
             GameManager.instance.uiManager.RefreshAll();
-            GameManager.instance.moneyManager.addMoney(reward);
-            Player.addExp(1);
+            Player.addExp(1005);
             refreshOrder();
         }
         else
