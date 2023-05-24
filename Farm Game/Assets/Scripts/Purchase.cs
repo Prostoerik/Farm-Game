@@ -9,6 +9,9 @@ public class Purchase : MonoBehaviour
 {
     List<Image> productImages;
     List<TextMeshProUGUI> productPrices;
+    List<Button> buttons;
+
+    private int curLevel = 0;
 
     private int selectedIndex = -1;
 
@@ -43,17 +46,17 @@ public class Purchase : MonoBehaviour
         productImages = GetComponentsInChildren<Image>().ToList();
         productPrices = GetComponentsInChildren<TextMeshProUGUI>().ToList();
 
-        for (int i = 1, j = 0; i < productImages.Count; i += 2, j++)
+        for (int i = 1, j = 0; i < productImages.Count; i += 3, j++)
         {
             productImages[i].sprite = itemsToSell[j].data.icon;
         }
 
-        for (int i = 0; i < productPrices.Count; i++)
+        for (int i = 0, j = 0; i < productPrices.Count; i += 2, j++)
         {
-            productPrices[i].text = itemsToSell[i].data.buyPrice.ToString();
+            productPrices[i].text = itemsToSell[j].data.buyPrice.ToString();
         }
 
-        List<Button> buttons = GetComponentsInChildren<Button>().ToList();
+        buttons = GetComponentsInChildren<Button>().ToList();
         foreach(Button b in buttons)
         {
             b.onClick.AddListener(delegate { selectProduct(b); });
@@ -63,12 +66,40 @@ public class Purchase : MonoBehaviour
         buyButton.onClick.AddListener(delegate { buyProduct(); });
     }
 
+    private void FixedUpdate()
+    {
+        if (curLevel < Player.lvl)
+        {
+            for (int i = 0, j = 1, k = 2; i < itemsToSell.Count; i++, j += 2, k += 3)
+            {
+                if (itemsToSell[i].data.openingLevel > Player.lvl)
+                {
+                    buttons[i].onClick.RemoveAllListeners();
+                    productPrices[j].enabled = true;
+                    productPrices[j].text = "Lvl" + itemsToSell[i].data.openingLevel.ToString();
+                    productImages[k].enabled = true;
+                }
+                else
+                {
+                    int tempIndex = i;
+                    productPrices[j].enabled = false;
+                    productImages[k].enabled = false;
+
+                    buttons[i].onClick.RemoveAllListeners();
+                    buttons[i].onClick.AddListener(delegate { selectProduct(buttons[tempIndex]); });
+                }
+            }
+            curLevel = Player.lvl;
+        }
+    }
+
+
     private void buyProduct()
     {
-        if (selectedIndex != -1 && int.Parse(productPrices[selectedIndex].text) <= int.Parse(balance.text.Substring(0, balance.text.Length - 1))) {
+        if (selectedIndex != -1 && int.Parse(productPrices[selectedIndex * 2].text) <= int.Parse(balance.text.Substring(0, balance.text.Length - 1))) {
             player.inventory.backpack.Add(itemsToSell[selectedIndex]);
             GameManager.instance.uiManager.RefreshAll();
-            GameManager.instance.moneyManager.reduceMoney(int.Parse(productPrices[selectedIndex].text));
+            GameManager.instance.moneyManager.reduceMoney(int.Parse(productPrices[selectedIndex * 2].text));
         }
     }
 

@@ -2777,7 +2777,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 463413550}
   m_HandleRect: {fileID: 463413549}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8950,6 +8950,8 @@ MonoBehaviour:
   itemsToSell:
   - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
   - {fileID: 5104115522142580417, guid: b350817f980cd6a42bb7cd537f984129, type: 3}
+  - {fileID: 5104115522142580417, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
+  - {fileID: 5104115522142580417, guid: c706ec86f5b53484bbf1ea6b2ff4393f, type: 3}
   player: {fileID: 1975870521}
   empty: {fileID: 21300000, guid: 694cf23023d647b45aa2b3ae724d42c0, type: 3}
   sellButton: {fileID: 858656809}
@@ -11795,7 +11797,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -972638346, guid: fafda1894b5499c4e9f06bf7462b5bd5, type: 3}
+  m_Sprite: {fileID: 380762358, guid: fa1fdc0fee39971478bbb2ce18850253, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -31891,7 +31893,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1166841161}
   m_HandleRect: {fileID: 1166841160}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -32174,6 +32176,7 @@ GameObject:
   - component: {fileID: 1602262518}
   - component: {fileID: 1602262517}
   - component: {fileID: 1602262516}
+  - component: {fileID: 1602262519}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -32261,6 +32264,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1602262519
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602262515}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c23b682777d2028488532dc48fd4f01e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1607526718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32510,6 +32533,7 @@ MonoBehaviour:
   - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
   - {fileID: 5104115522142580417, guid: c706ec86f5b53484bbf1ea6b2ff4393f, type: 3}
   - {fileID: 5104115522142580417, guid: 7030ffca34ab58b43b9cc4f9383631ee, type: 3}
+  - {fileID: 5104115522142580417, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
 --- !u!114 &1634016409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32640,6 +32664,7 @@ GameObject:
   - component: {fileID: 1638278622}
   - component: {fileID: 1638278621}
   - component: {fileID: 1638278624}
+  - component: {fileID: 1638278625}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -32772,6 +32797,26 @@ PolygonCollider2D:
       - {x: 1.3524046, y: 1.1104729}
       - {x: 1.4212332, y: 1.7823353}
       - {x: 0.68434525, y: 1.8051672}
+--- !u!95 &1638278625
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638278620}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2031852959b8ec94fb2e9a0081045202, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1654484425
 GameObject:
   m_ObjectHideFlags: 0
@@ -33859,8 +33904,10 @@ MonoBehaviour:
   itemsToSell:
   - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
   - {fileID: 5104115522142580417, guid: b350817f980cd6a42bb7cd537f984129, type: 3}
+  - {fileID: 5104115522142580417, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
+  - {fileID: 5104115522142580417, guid: c706ec86f5b53484bbf1ea6b2ff4393f, type: 3}
   panel: {fileID: 1767870934}
-  purchaseSlot: {fileID: 4156484212812974327, guid: ec4f601b8c5056c459e5c64fc7abfa05, type: 3}
+  purchaseSlot: {fileID: 4156484212812974327, guid: fb7eab15f4c577d41bb1b6e9adf96931, type: 3}
   player: {fileID: 1975870521}
   empty: {fileID: 21300000, guid: 694cf23023d647b45aa2b3ae724d42c0, type: 3}
   buyButton: {fileID: 1097815002}
@@ -35103,6 +35150,7 @@ GameObject:
   - component: {fileID: 1937808758}
   - component: {fileID: 1937808757}
   - component: {fileID: 1937808756}
+  - component: {fileID: 1937808759}
   m_Layer: 0
   m_Name: Mill
   m_TagString: Untagged
@@ -35231,6 +35279,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1937808759
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937808755}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e19958501ae91b14790195f7087214ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!224 &1950762220 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4156484212812974324, guid: 7e3bb627252d8144a9334b560337fee2, type: 3}

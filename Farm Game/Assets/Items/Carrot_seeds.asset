@@ -17,4 +17,4 @@ MonoBehaviour:
   crop: {fileID: 11400000, guid: 3600ecb2a1f9c19449724e5cea2292cb, type: 2}
   sellPrice: 2
   buyPrice: 2
-  openingLevel: 1
+  openingLevel: 2

@@ -10,8 +10,6 @@ public class Movement : MonoBehaviour
 
     private Vector3 direction;
 
-    bool isBoosting;
-
     private void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
