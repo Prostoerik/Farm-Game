@@ -9,8 +9,12 @@ public class GameManager : MonoBehaviour
     public ItemManager itemManager;
     public TileManager tileManager;
     public UI_Manager uiManager;
+    public CropsManager cropsManager;
+    public LevelManager lvlManager;
 
     public Player player;
+
+    public int selectedItemIndex;
 
     private void Awake()
     {
@@ -28,6 +32,9 @@ public class GameManager : MonoBehaviour
         itemManager = GetComponent<ItemManager>();
         tileManager = GetComponent<TileManager>();
         uiManager = GetComponent<UI_Manager>();
+        cropsManager = GetComponent<CropsManager>();
+        lvlManager = GetComponent<LevelManager>();
+        selectedItemIndex = 0;
 
         player = FindObjectOfType<Player>();
     }

@@ -9,7 +9,7 @@ public class ResourceNode : ToolHit
     [SerializeField] private int dropCount = 5;
     [SerializeField] private float spread = 0.7f;
     [SerializeField] private ResourceNodeType nodeType;
-    [SerializeField] private Item item;
+    //[SerializeField] private Item item;
     [SerializeField] private int itemCountInOneDrop = 1;
     public override void Hit()
     {

@@ -127,6 +127,5 @@ MonoBehaviour:
   collectable: {fileID: 1844314941603410208, guid: 69ab7bbbc1ac0cd41a7bd3b058b5eafa, type: 3}
   dropCount: 5
   spread: 0.7
-  nodeType: 0
-  item: {fileID: 0}
+  nodeType: 2
   itemCountInOneDrop: 1

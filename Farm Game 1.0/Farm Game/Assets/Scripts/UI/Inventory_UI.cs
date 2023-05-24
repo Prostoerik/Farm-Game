@@ -16,10 +16,26 @@ public class Inventory_UI : MonoBehaviour
     private bool dragSingle;
 
     private Inventory inventory;
+    
+    
+    //SOUND
+    public AudioClip openInventorySound;
+    public AudioClip closeInventorySound;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         canvas = FindObjectOfType<Canvas>();
+    }
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            // Воспроизводим звук открытия инвентаря
+                audioSource.clip = openInventorySound;
+                audioSource.Play();
+        }
     }
 
     public void CloseInventory()
@@ -27,16 +43,29 @@ public class Inventory_UI : MonoBehaviour
         if (inventoryPanel != null)
         {
             inventoryPanel.SetActive(false);
+            audioSource.clip = closeInventorySound;
+            audioSource.Play();
         }
     }
 
+  
     void Start()
     {
         //inventoryPanel.SetActive(false);
         inventory = GameManager.instance.player.inventory.GetInventoryByName(inventoryName);
+        
 
         SetupSlots();
         Refresh();
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
+        audioSource.volume = 0.3f; // Установите громкость звука 0.3f
+
+        // Присваиваем звуки открытия и закрытия инвентаря
+        audioSource.clip = openInventorySound;
+        audioSource.clip = closeInventorySound;
     }
 
     public void Refresh()

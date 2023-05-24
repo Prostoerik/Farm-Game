@@ -14,6 +14,8 @@ public class GatherResourceNode : ToolAction
 {
     [SerializeField] private float sizeOfInteractableArea = 1f;
     [SerializeField] private List<ResourceNodeType> canHitNodesOfType;
+    
+    
     public override bool OnApply(Vector2 worldPoint)
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(worldPoint, sizeOfInteractableArea);

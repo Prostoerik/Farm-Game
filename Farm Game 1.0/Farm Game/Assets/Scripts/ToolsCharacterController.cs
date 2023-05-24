@@ -10,13 +10,14 @@ public class ToolsCharacterController : MonoBehaviour
     [SerializeField] private float offsetDistance = 1f;
     [SerializeField] private float sizeOfInteractableArea = 1.2f;
     // Toolbar_UI
-    private Toolbar_UI toolbarController;
+    public Player player;
+    public string tool;
+    public ItemData item;
 
     private void Awake()
     {
         character = GetComponent<CharacterController2D>();
         rgbd2d = GetComponent<Rigidbody2D>();
-        toolbarController = GetComponent<Toolbar_UI>();
     }
 
     private void Update()
@@ -27,18 +28,18 @@ public class ToolsCharacterController : MonoBehaviour
         }
     }
     
-    /*
+
     private bool UseToolWorld()
     {
         Vector2 position = rgbd2d.position + character.rigidBody2D.position * offsetDistance;
 
-        Item item = toolbarController.GetItem;
-        if (item == null) { return false;}
+        string toolName = player.inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName;
+        if (toolName == null || toolName == "") { return false;}
         if (item.onAction == null) { return false;}
 
         bool complete = item.onAction.OnApply(position);
         
         return complete;
     }
-    */
+
 }
