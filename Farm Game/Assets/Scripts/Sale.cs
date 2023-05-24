@@ -70,7 +70,7 @@ public class Sale : MonoBehaviour
         inventoryItemsLocs.Clear();
         for (int i = 0; i < 27; i++)
         {
-            if (!player.inventory.backpack.slots[i].IsEmpty)
+            if (!player.inventory.backpack.slots[i].IsEmpty && itemsToSellNames.Contains(player.inventory.backpack.slots[i].itemName))
             {
                 if (!inventoryItems.ContainsKey(player.inventory.backpack.slots[i].itemName))
                 {
@@ -87,7 +87,7 @@ public class Sale : MonoBehaviour
         }
         for (int i = 0; i < 9; i++)
         {
-            if (!player.inventory.toolbar.slots[i].IsEmpty)
+            if (!player.inventory.toolbar.slots[i].IsEmpty && itemsToSellNames.Contains(player.inventory.toolbar.slots[i].itemName))
             {
                 if (!inventoryItems.ContainsKey(player.inventory.toolbar.slots[i].itemName))
                 {

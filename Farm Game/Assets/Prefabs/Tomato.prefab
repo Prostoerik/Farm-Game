@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8882897995723299045}
   - component: {fileID: 5104115522142580417}
   m_Layer: 0
-  m_Name: Carrot
+  m_Name: Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1619398911, guid: 072b50622804a3449a5e1329e548d5b0, type: 3}
+  m_Sprite: {fileID: 1378582962, guid: 072b50622804a3449a5e1329e548d5b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -159,5 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a3b7745629b39429afdd1b54e2dc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 80f62d9ecc5fded4e95f396426a2758e, type: 2}
+  data: {fileID: 11400000, guid: 791167c8be052bb41808cff0d298672f, type: 2}
   rb2d: {fileID: 0}

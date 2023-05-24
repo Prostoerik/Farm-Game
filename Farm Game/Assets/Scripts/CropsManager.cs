@@ -37,11 +37,22 @@ public class CropsManager : MonoBehaviour
     [SerializeField] private Tilemap targetTilemap;
     [SerializeField] private GameObject cropsSpritePrefab;
     [SerializeField] private Crop toSeed;
+    [SerializeField] private List<Item> itemsToSeed;
 
     private float tickInterval = 1f; // Интервал между тиками в секундах
     private float timeSinceLastTick = 0f; // Время, прошедшее с последнего тика
 
+    public List<string> itemsToSeedNames = new List<string>();
+
     Dictionary<Vector2Int, CropTile> crops = new Dictionary<Vector2Int, CropTile>();
+
+    private void Start()
+    {
+        foreach (Item item in itemsToSeed)
+        {
+            itemsToSeedNames.Add(item.data.itemName);
+        }
+    }
 
     private void Update()
     {
@@ -82,7 +93,7 @@ public class CropsManager : MonoBehaviour
         return crops.ContainsKey((Vector2Int)position);
     }
 
-    public void SetPlanted(Vector3Int position)
+    public void SetPlanted(Vector3Int position, string seedName)
     {
         if (Check(position))
         {
@@ -103,13 +114,12 @@ public class CropsManager : MonoBehaviour
 
             CropTile crop = new CropTile();
             crops.Add((Vector2Int)position, crop);
-            crops[(Vector2Int)position].crop = toSeed;
-
+            crops[(Vector2Int)position].crop = itemsToSeed[itemsToSeedNames.IndexOf(seedName)].data.crop;
+            
             GameObject go = Instantiate(cropsSpritePrefab);
             go.transform.position = targetTilemap.CellToWorld(position) + targetTilemap.cellSize / 2f; ;
             go.SetActive(false);
             crop.renderer = go.GetComponent<SpriteRenderer>();
-
         }
     }
 }

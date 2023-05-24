@@ -42,21 +42,25 @@ public class Player : MonoBehaviour
             Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
             if(GameManager.instance.tileManager.isInteractable(position))
             {
-                //Debug.Log("Tile is interactable");
-                //inventory.toolbar.slots[GameManager.instance.uiManager.inventoryUIs[1].selectedSlot.slotID].itemName == "Carrot_seeds"
-                //inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot seeds"
-                if (GameManager.instance.tileManager.isPlowed(position) && inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Carrot seeds")
+                if (GameManager.instance.tileManager.isPlowed(position) && GameManager.instance.cropsManager.itemsToSeedNames.Contains(inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName))
                 {
-                    inventory.toolbar.slots[GameManager.instance.selectedItemIndex].RemoveItem();
-                    //inventory.toolbar.MoveSlot(GameManager.instance.selectedItemIndex, 26, inventory.backpack);
+                    GameManager.instance.cropsManager.SetPlanted(position, inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName);
+                    inventory.toolbar.Remove(GameManager.instance.selectedItemIndex);
                     GameManager.instance.uiManager.RefreshAll();
-                    //inventory.toolbar.Remove(GameManager.instance.selectedItemIndex);
-                    //Debug.Log(inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName); 
-                    GameManager.instance.cropsManager.SetPlanted(position);
-                }
+                } 
                 else
                 {
-                    GameManager.instance.tileManager.SetInteracted(position);
+                    if (GameManager.instance.tileManager.isPlanted(position))
+                    {
+                        GameManager.instance.cropsManager.SetPlanted(position, "");
+                    }
+                    else
+                    {
+                        if (inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Hoe")
+                        {
+                            GameManager.instance.tileManager.SetInteracted(position);
+                        }
+                    }
                 }
             }
         }

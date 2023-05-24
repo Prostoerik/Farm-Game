@@ -45,7 +45,22 @@ public class TileManager : MonoBehaviour
 
         if (tile != null)
         {
-            if (tile.name == "Summer_Plowed" || tile.name == "Summer_Planted")
+            if (tile.name == "Summer_Plowed")
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool isPlanted(Vector3Int position)
+    {
+        TileBase tile = interactableMap.GetTile(position);
+
+        if (tile != null)
+        { 
+            if (tile.name == "Summer_Planted")
             {
                 return true;
             }

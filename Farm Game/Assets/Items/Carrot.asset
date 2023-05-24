@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: 
   itemName: Carrot
-  icon: {fileID: -62092382, guid: e0fd97eee49ebc243ab8daaf1a3216bd, type: 3}
+  icon: {fileID: -1619398911, guid: 072b50622804a3449a5e1329e548d5b0, type: 3}
   crop: {fileID: 0}
+  sellPrice: 0
+  buyPrice: 0
+  openingLevel: 0
