@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdc229d34d2ae946841ca77026e79c2, type: 3}
+  m_Name: Lettuce_crop
+  m_EditorClassIdentifier: 
+  timeToGrow: 15
+  yield: {fileID: 4286335385460020833, guid: 4f19dceba85259f4c85f210d705b5a36, type: 3}
+  count: 1
+  sprites:
+  - {fileID: -1761673616, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -2040812993, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -765195335, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: 1544461316, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: 1137332369, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  growthStageTime: 0300000006000000090000000c0000000f000000

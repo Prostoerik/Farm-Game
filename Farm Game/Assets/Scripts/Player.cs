@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public static float lvlProgress;
     public static float[] expMultiplier = new float[100];
     public static int money = 200;
+    private SpriteRenderer playerSpriteRenderer;
 
     private void Awake()
     {
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+            Vector3Int position = new Vector3Int((int)transform.position.x, (int)(transform.position.y - 1f), 0);
             if(GameManager.instance.tileManager.isInteractable(position))
             {
                 if (GameManager.instance.tileManager.isPlowed(position) && GameManager.instance.cropsManager.itemsToSeedNames.Contains(inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName))
