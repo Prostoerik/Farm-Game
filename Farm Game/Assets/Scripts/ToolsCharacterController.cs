@@ -30,6 +30,7 @@ public class ToolsCharacterController : MonoBehaviour
 
     private bool UseToolWorld()
     {
+<<<<<<< Updated upstream
         Vector2 position = rgbd2d.position;
         if (player.inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Axe")
         {
@@ -40,6 +41,13 @@ public class ToolsCharacterController : MonoBehaviour
         {
             item.itemName = "Pickaxe";
         }
+=======
+        Vector2 position = rgbd2d.position + character.rigidBody2D.position * offsetDistance;
+        Debug.Log("here");
+        string toolName = player.inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName;
+        if (toolName == null || toolName == "") { return false;}
+        if (item.onAction == null) { return false;}
+>>>>>>> Stashed changes
 
         bool complete = item.onAction.OnApply(position);
         

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tomato_crop
   m_EditorClassIdentifier: 
   timeToGrow: 15
-  yield: {fileID: 5104115522142580417, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
+  yield: {fileID: 4286335385460020833, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
   count: 1
   sprites:
   - {fileID: 769874003, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
