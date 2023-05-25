@@ -11,4 +11,5 @@ public class ItemData : ScriptableObject
     public int sellPrice;
     public int buyPrice;
     public int openingLevel;
+    public ToolAction onAction;
 }
