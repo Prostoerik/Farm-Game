@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9064730581715372886}
   - component: {fileID: 2130814564536974948}
   - component: {fileID: 1082446356680899828}
+  - component: {fileID: 9087077032028675731}
   m_Layer: 0
   m_Name: Tree_3
   m_TagString: Untagged
@@ -111,3 +112,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1.2}
   m_EdgeRadius: 0
+--- !u!114 &9087077032028675731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109803988876075875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2baf123e059c83a449b3c574d61d494a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectable: {fileID: 6512967481940623226, guid: 2933ef00413837940b1dcaf849be8af4, type: 3}
+  dropCount: 5
+  spread: 0.7
+  nodeType: 1
+  itemCountInOneDrop: 1

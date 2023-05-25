@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7652522989170420286}
   - component: {fileID: 7652522989170420285}
   - component: {fileID: 7652522989170420284}
-  - component: {fileID: -4135650545527295389}
+  - component: {fileID: 7652522989170420287}
   m_Layer: 0
   m_Name: Tree_1
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7652522989170420275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 45.757, y: -2.9693, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.903063, y: 2.1318684, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1.2}
   m_EdgeRadius: 0
---- !u!114 &-4135650545527295389
+--- !u!114 &7652522989170420287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,14 +121,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7652522989170420275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a931bb1b69edd94095290aebfc17914, type: 3}
+  m_Script: {fileID: 11500000, guid: 2baf123e059c83a449b3c574d61d494a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeSprites:
-  - {fileID: -270789404, guid: 14994f94f89f4cf4aaa1ed539f2c8c59, type: 3}
-  - {fileID: -745260847, guid: 14994f94f89f4cf4aaa1ed539f2c8c59, type: 3}
-  - {fileID: -402937183, guid: 14994f94f89f4cf4aaa1ed539f2c8c59, type: 3}
-  - {fileID: 987765018, guid: 14994f94f89f4cf4aaa1ed539f2c8c59, type: 3}
-  shakeInterval: 0.9
-  player: {fileID: 0}
-  loot: {fileID: 1050617583649377303, guid: 2933ef00413837940b1dcaf849be8af4, type: 3}
+  collectable: {fileID: 6512967481940623226, guid: 2933ef00413837940b1dcaf849be8af4, type: 3}
+  dropCount: 5
+  spread: 0.7
+  nodeType: 1
+  itemCountInOneDrop: 1
