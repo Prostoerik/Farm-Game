@@ -30,7 +30,9 @@ public class ToolsCharacterController : MonoBehaviour
 
     private bool UseToolWorld()
     {
+        
         Vector2 position = rgbd2d.position;
+        /*
         if (player.inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Axe")
         {
             item.itemName = "Axe";
@@ -40,6 +42,10 @@ public class ToolsCharacterController : MonoBehaviour
         {
             item.itemName = "Pickaxe";
         }
+        */
+        //string toolName = player.inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName;
+        //if (toolName == null || toolName == "") { return false;}
+        //f (item.onAction == null) { return false;}
 
         bool complete = item.onAction.OnApply(position);
         
