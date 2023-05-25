@@ -111491,6 +111491,8 @@ MonoBehaviour:
   - {fileID: 18965471}
   - {fileID: 1207020968}
   canvas: {fileID: 0}
+  openInventorySound: {fileID: 8300000, guid: 34f7bb3332b63cf40ba031f8c75f654d, type: 3}
+  closeInventorySound: {fileID: 8300000, guid: 337ba2ada9415cc4ab406fc07e9a7901, type: 3}
 --- !u!1001 &1378202545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116176,6 +116178,8 @@ MonoBehaviour:
   - {fileID: 341815304}
   - {fileID: 1498195462}
   canvas: {fileID: 0}
+  openInventorySound: {fileID: 0}
+  closeInventorySound: {fileID: 0}
 --- !u!114 &1696724421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118583,7 +118587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913078395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36, y: -3.8, z: 0}
+  m_LocalPosition: {x: 20.56, y: -4.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118762,6 +118766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   animator: {fileID: 1188950852}
+  groundWalkingClip: {fileID: 8300000, guid: b8f0e8f7de1f3d9488d543baacb9933e, type: 3}
+  fadeDuration: 0
+  walkVolume: 0.1
 --- !u!4 &1975870518
 Transform:
   m_ObjectHideFlags: 0
@@ -118870,9 +118877,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetDistance: 1
   sizeOfInteractableArea: 1.2
-  player: {fileID: 0}
-  tool: 
-  item: {fileID: 0}
+  player: {fileID: 1975870521}
+  item: {fileID: 11400000, guid: ece4493d29f4c324fad9aa8727b48291, type: 2}
 --- !u!1 &1981326765
 GameObject:
   m_ObjectHideFlags: 0

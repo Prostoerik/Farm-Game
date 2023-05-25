@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Movement : MonoBehaviour
 {
@@ -10,14 +11,64 @@ public class Movement : MonoBehaviour
 
     private Vector3 direction;
 
+    bool isBoosting;
+    
+    public AudioClip groundWalkingClip;
+    private AudioSource audioSource;
+    
+    public float fadeDuration; // Длительность затухания звука (в секундах)
+    private float targetVolume; // Целевое значение громкости
+    private float initialVolume; // Начальное значение громкости
+    private bool isFading; // Флаг, указывающий на процесс затухания
+    public float walkVolume = 0.1f;
+    
+    void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = groundWalkingClip;
+        audioSource.loop = true;
+        audioSource.playOnAwake = false;
+        audioSource.volume = walkVolume;
+    
+        initialVolume = walkVolume;
+        
+    }
+    
     private void Update()
     {
+        
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        direction = new Vector3(horizontal, vertical);     
+        direction = new Vector3(horizontal, vertical);
 
         AnimateMovement(direction);
+
+        if (direction.magnitude > 0 && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        else if (direction.magnitude == 0 && audioSource.isPlaying && !isFading)
+        {
+            StartCoroutine(FadeOut());
+        }
+    }
+    
+    IEnumerator FadeOut()
+    {
+        isFading = true;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(initialVolume, 0f, elapsedTime / fadeDuration);
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = initialVolume;
+        isFading = false;
     }
 
     private void FixedUpdate()

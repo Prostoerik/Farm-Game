@@ -11,7 +11,6 @@ public class ToolsCharacterController : MonoBehaviour
     [SerializeField] private float sizeOfInteractableArea = 1.2f;
     // Toolbar_UI
     public Player player;
-    public string tool;
     public ItemData item;
 
     private void Awake()
@@ -24,18 +23,23 @@ public class ToolsCharacterController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //UseToolWorld();
+            UseToolWorld();
         }
     }
     
 
     private bool UseToolWorld()
     {
-        Vector2 position = rgbd2d.position + character.rigidBody2D.position * offsetDistance;
-
-        string toolName = player.inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName;
-        if (toolName == null || toolName == "") { return false;}
-        if (item.onAction == null) { return false;}
+        Vector2 position = rgbd2d.position;
+        if (player.inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Axe")
+        {
+            item.itemName = "Axe";
+        }
+        
+        if (player.inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName == "Pickaxe")
+        {
+            item.itemName = "Pickaxe";
+        }
 
         bool complete = item.onAction.OnApply(position);
         
