@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Inventory_UI : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class Inventory_UI : MonoBehaviour
             inventoryPanel.SetActive(false);
             audioSource.clip = closeInventorySound;
             audioSource.Play();
+            GameManager.instance.isInventoryOpen = false;
         }
     }
 
@@ -54,7 +56,6 @@ public class Inventory_UI : MonoBehaviour
         //inventoryPanel.SetActive(false);
         inventory = GameManager.instance.player.inventory.GetInventoryByName(inventoryName);
         
-
         SetupSlots();
         Refresh();
 
@@ -88,6 +89,16 @@ public class Inventory_UI : MonoBehaviour
 
     public void Remove()
     {
+        try
+        {
+            Item itemToDropTry = GameManager.instance.itemManager.GetItemByName(inventory.slots[UI_Manager.draggedSlot.slotID].itemName);
+        }
+        catch (Exception ex)
+        {
+            string t = ex.ToString();
+            return;
+        }
+
         Item itemToDrop = GameManager.instance.itemManager.GetItemByName(inventory.slots[UI_Manager.draggedSlot.slotID].itemName);
 
         if (itemToDrop != null)
@@ -129,7 +140,6 @@ public class Inventory_UI : MonoBehaviour
     {
         Destroy(UI_Manager.draggedIcon.gameObject);
         //UI_Manager.draggedIcon = null;
-
     }
 
     public void SlotDrop(Slots_UI slot)

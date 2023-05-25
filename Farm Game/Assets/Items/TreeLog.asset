@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: TreeLog
   m_EditorClassIdentifier: 
   itemName: Tree Log
-  icon: {fileID: 1836773884, guid: 5c88c70f3eaf0c145a772870f01581a0, type: 3}
+  icon: {fileID: -731941484, guid: 072b50622804a3449a5e1329e548d5b0, type: 3}
+  crop: {fileID: 0}
+  sellPrice: 0
+  buyPrice: 0
+  openingLevel: 0
