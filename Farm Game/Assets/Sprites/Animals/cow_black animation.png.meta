@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1b3c135557adc0488865aa68bbd1a6d
+guid: 76e89d3a4b5fe4d4893e4f92afc7abef
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,421 +117,421 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cow_baby_black animation_0
+      name: cow_black animation_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 84
-        width: 15
-        height: 15
+        x: 4
+        y: 96
+        width: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4161fafd6fff744eb5eb6b363030447
-      internalID: 895510786
+      spriteID: e3f067ce876eb144fb078be9011e1048
+      internalID: -1515858763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_1
+      name: cow_black animation_1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 85
-        width: 15
-        height: 14
+        x: 28
+        y: 98
+        width: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11342b70897c0574c9041a1b068dc2ec
-      internalID: -647706727
+      spriteID: 8cfdb488064f6034e8ef773ede043307
+      internalID: -61229053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_2
+      name: cow_black animation_2
       rect:
         serializedVersion: 2
-        x: 43
-        y: 84
-        width: 15
-        height: 15
+        x: 52
+        y: 96
+        width: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 708707fe85d681943868df9b7cd27ea2
-      internalID: 73927571
+      spriteID: 9cc0d4c67f55a9e4eb00c48f32ec1b77
+      internalID: 1819134903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_3
+      name: cow_black animation_3
       rect:
         serializedVersion: 2
-        x: 63
-        y: 85
-        width: 15
-        height: 14
+        x: 76
+        y: 98
+        width: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da044cd540700284390712fb9c17a3eb
-      internalID: 996061307
+      spriteID: 086db49025f69e44391460eaaa7c02cc
+      internalID: -1566249265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_4
+      name: cow_black animation_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 63
-        width: 15
-        height: 16
+        x: 4
+        y: 72
+        width: 16
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e79a8a7cda827045b3ab2ebebbe9b41
-      internalID: -1664130680
+      spriteID: 74c6acbba34a54346a64aca41640cb9d
+      internalID: -710672658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_5
+      name: cow_black animation_5
       rect:
         serializedVersion: 2
-        x: 24
-        y: 64
-        width: 15
-        height: 16
+        x: 28
+        y: 73
+        width: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14b8e2113bed832478eb25e4b90e923c
-      internalID: -1666840970
+      spriteID: 577017426fade9647bd4e8445b8c0e92
+      internalID: -104039607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_6
+      name: cow_black animation_6
       rect:
         serializedVersion: 2
-        x: 45
-        y: 63
-        width: 15
-        height: 16
+        x: 52
+        y: 72
+        width: 16
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebc4645464b5ddc4bb500af977a7f73a
-      internalID: 2006683368
+      spriteID: 8fbe6d1936e8c1e4c8b99ca1d85eddb7
+      internalID: -97579238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_7
+      name: cow_black animation_7
       rect:
         serializedVersion: 2
-        x: 66
-        y: 64
-        width: 15
-        height: 16
+        x: 76
+        y: 73
+        width: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22d2fecc2e5bac949a7a62589459aa6c
-      internalID: 1647180372
+      spriteID: e608b8588a8fce640ad2e200150f1663
+      internalID: -88425825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_8
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 43
-        width: 21
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fae87bdc8d494c4c8d04aadc2bd941c
-      internalID: 101827928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cow_baby_black animation_9
+      name: cow_black animation_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 21
-        width: 21
-        height: 14
+        y: 48
+        width: 24
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95803b5588eb3e946914511590f5d452
-      internalID: 202060730
+      spriteID: c88706fdae283c946a9cf9bb94f7ce41
+      internalID: -867878735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_10
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 0
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ae04f4febee8ad4c8798d4503e85c72
-      internalID: 1935158937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cow_baby_black animation_11
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f9d43079a7aa4f44a63bc27983d7d7f
-      internalID: 1476561551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cow_baby_black animation_12
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 0
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b216cec5a9ab2c540ba6b05043cc4d74
-      internalID: -645861063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cow_baby_black animation_13
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 0
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be811ca0db323844587be202ca141bb2
-      internalID: 233747023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cow_baby_black animation_14
+      name: cow_black animation_9
       rect:
         serializedVersion: 2
         x: 0
-        y: 42
-        width: 21
-        height: 14
+        y: 24
+        width: 24
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 098263e49fba103419f9f30f522605cf
-      internalID: -626866287
+      spriteID: d5a23470aad969144b773e0be9fb9503
+      internalID: 1945590649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_15
+      name: cow_black animation_10
       rect:
         serializedVersion: 2
-        x: 42
-        y: 42
-        width: 21
-        height: 14
+        x: 4
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88e9b08bbaf420b45969a116c1d9d377
-      internalID: -436373034
+      spriteID: 87040bf4fc864df43bce8f74e48c1525
+      internalID: -1546803786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_16
+      name: cow_black animation_11
       rect:
         serializedVersion: 2
-        x: 63
-        y: 44
-        width: 21
-        height: 13
+        x: 28
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 735cd34dcc83acc48a539a455696c1b2
-      internalID: 723733426
+      spriteID: 3e1e0b5a20b4e4548b77970f458d2381
+      internalID: 1003990513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_17
+      name: cow_black animation_12
       rect:
         serializedVersion: 2
-        x: 22
-        y: 22
-        width: 21
-        height: 14
+        x: 52
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83092626fc5252c4c9eba9f320c829d4
-      internalID: 305214793
+      spriteID: 0242a9361e691a64bb866a21a6ccd421
+      internalID: 1934426516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_18
+      name: cow_black animation_13
       rect:
         serializedVersion: 2
-        x: 43
-        y: 21
-        width: 20
-        height: 14
+        x: 76
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52b2311d7c7a1ce489f91821085887eb
-      internalID: -2039621122
+      spriteID: 5b334094867958247981375471e801fd
+      internalID: 353994237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_baby_black animation_19
+      name: cow_black animation_14
       rect:
         serializedVersion: 2
-        x: 64
-        y: 22
-        width: 20
-        height: 13
+        x: 24
+        y: 50
+        width: 24
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f660f46940c555446975cfeab1e1eae7
-      internalID: 185980562
+      spriteID: 379601004d5cc2e4a98b1d1cbd86b49f
+      internalID: 547944130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_black animation_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0795b869373a05d468fd9be6209c9c33
+      internalID: 1544645103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_black animation_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 50
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ffe77e89fd3524d8160cd3197c8f07
+      internalID: -957734967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_black animation_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 26
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4aca6b4830aff45bb9e49afe492f76
+      internalID: 248437670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_black animation_18
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37db6e012524ec4db48f1931d922c6c
+      internalID: -2144481862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cow_black animation_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 26
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d61720f3f895134795c23df9448bba6
+      internalID: 1676210756
       vertices: []
       indices: 
       edges: []
@@ -547,26 +547,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cow_baby_black animation_1: -647706727
-      cow_baby_black animation_4: -1664130680
-      cow_baby_black animation_18: -2039621122
-      cow_baby_black animation_2: 73927571
-      cow_baby_black animation_5: -1666840970
-      cow_baby_black animation_16: 723733426
-      cow_baby_black animation_19: 185980562
-      cow_baby_black animation_0: 895510786
-      cow_baby_black animation_6: 2006683368
-      cow_baby_black animation_7: 1647180372
-      cow_baby_black animation_14: -626866287
-      cow_baby_black animation_9: 202060730
-      cow_baby_black animation_10: 1935158937
-      cow_baby_black animation_15: -436373034
-      cow_baby_black animation_11: 1476561551
-      cow_baby_black animation_13: 233747023
-      cow_baby_black animation_3: 996061307
-      cow_baby_black animation_8: 101827928
-      cow_baby_black animation_17: 305214793
-      cow_baby_black animation_12: -645861063
+      cow_black animation_0: -1515858763
+      cow_black animation_7: -88425825
+      cow_black animation_2: 1819134903
+      cow_black animation_15: 1544645103
+      cow_black animation_3: -1566249265
+      cow_black animation_13: 353994237
+      cow_black animation_18: -2144481862
+      cow_black animation_19: 1676210756
+      cow_black animation_12: 1934426516
+      cow_black animation_10: -1546803786
+      cow_black animation_14: 547944130
+      cow_black animation_8: -867878735
+      cow_black animation_17: 248437670
+      cow_black animation_16: -957734967
+      cow_black animation_4: -710672658
+      cow_black animation_5: -104039607
+      cow_black animation_6: -97579238
+      cow_black animation_1: -61229053
+      cow_black animation_11: 1003990513
+      cow_black animation_9: 1945590649
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
