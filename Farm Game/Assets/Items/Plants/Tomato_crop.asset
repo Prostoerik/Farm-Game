@@ -16,9 +16,9 @@ MonoBehaviour:
   yield: {fileID: 4286335385460020833, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
   count: 1
   sprites:
-  - {fileID: 769874003, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
-  - {fileID: 389887353, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
-  - {fileID: 1680624155, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
-  - {fileID: -1724654206, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
-  - {fileID: 1101485931, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: 1001873465, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -267090933, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -1173120423, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -1991864109, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -455346917, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
   growthStageTime: 0300000006000000090000000c0000000f000000
