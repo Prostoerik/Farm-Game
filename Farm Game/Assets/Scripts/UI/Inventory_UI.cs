@@ -100,6 +100,8 @@ public class Inventory_UI : MonoBehaviour
         }
 
         Item itemToDrop = GameManager.instance.itemManager.GetItemByName(inventory.slots[UI_Manager.draggedSlot.slotID].itemName);
+        Debug.Log(inventoryName);
+        Debug.Log(inventory.slots[UI_Manager.draggedSlot.slotID].itemName);
 
         if (itemToDrop != null)
         {

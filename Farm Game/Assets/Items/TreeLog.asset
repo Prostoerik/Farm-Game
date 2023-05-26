@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc29974637a5544faa0a2ffc9b0d908, type: 3}
   m_Name: TreeLog
   m_EditorClassIdentifier: 
-  itemName: Tree Log
+  itemName: Tree log
   icon: {fileID: -731941484, guid: 072b50622804a3449a5e1329e548d5b0, type: 3}
   crop: {fileID: 0}
   sellPrice: 0

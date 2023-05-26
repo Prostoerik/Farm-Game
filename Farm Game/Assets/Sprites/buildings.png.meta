@@ -2516,7 +2516,7 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 784
-        width: 96
+        width: 48
         height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -11393,6 +11393,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: buildings_537
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 784
+        width: 48
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b42b55afd0cf449860ea4b1b14b5f4
+      internalID: -1121830169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -11445,6 +11466,7 @@ TextureImporter:
       buildings_441: -228310341
       buildings_357: 830832798
       buildings_382: 1514813773
+      buildings_537: -1121830169
       buildings_69: 1177905644
       buildings_512: 880305693
       buildings_297: 512697489
@@ -11463,8 +11485,8 @@ TextureImporter:
       buildings_148: -1972038647
       buildings_159: 1829520850
       buildings_226: -1011810501
-      buildings_335: -855935234
       buildings_228: 149489957
+      buildings_335: -855935234
       buildings_77: 1862972314
       buildings_338: 1209377231
       buildings_68: 1866205231
@@ -11653,8 +11675,8 @@ TextureImporter:
       buildings_492: -69084451
       buildings_118: -62581703
       buildings_314: -1155096209
-      buildings_526: 1337141891
       buildings_65: 319178912
+      buildings_526: 1337141891
       buildings_263: -1950453259
       buildings_175: 230576909
       buildings_187: -99624416

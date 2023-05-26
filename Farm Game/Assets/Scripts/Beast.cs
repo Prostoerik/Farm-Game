@@ -7,7 +7,14 @@ public class Beast : MonoBehaviour
     public float moveSpeed = 3f; 
     public float idleTime = 2f; 
     public Vector2 boundsMin; 
-    public Vector2 boundsMax; 
+    public Vector2 boundsMax;
+
+    public Item loot;
+
+    private bool canSpawnLoot = true;
+    private bool allowClick = false;
+    private Player player;
+    private SpriteRenderer spriteRenderer;
 
     private bool isMoving = true;
     private Vector3 targetPosition;
@@ -17,6 +24,8 @@ public class Beast : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        player = GameManager.instance.player;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomTarget();
     }
 
@@ -25,6 +34,16 @@ public class Beast : MonoBehaviour
         if (isMoving)
         {
             MoveTowardsTarget();
+        }
+    }
+
+    void OnMouseDown()
+    {
+        if (allowClick && canSpawnLoot)
+        {
+            SpawnLoot();
+            canSpawnLoot = false;
+            Invoke("ResetSpawnFlag", 10f);
         }
     }
 
@@ -69,5 +88,27 @@ public class Beast : MonoBehaviour
 
         animator.SetFloat("horizontal", horizontal);
         animator.SetFloat("vertical", vertical);
+    }
+
+    private void SpawnLoot()
+    {
+        Instantiate(loot, transform.position - new Vector3(Random.Range(-1f, 1f), spriteRenderer.bounds.size.y / 2, 0f), Quaternion.identity);
+    }
+
+    private void ResetSpawnFlag()
+    {
+        canSpawnLoot = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (Vector3.Distance(this.transform.position, player.transform.position) < 1.5f)
+        {
+            allowClick = true;
+        }
+        else
+        {
+            allowClick = false;
+        }
     }
 }
