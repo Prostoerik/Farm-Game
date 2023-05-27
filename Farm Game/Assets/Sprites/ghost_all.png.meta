@@ -1570,9 +1570,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 49
-        y: 7
-        width: 14
-        height: 10
+        y: 12
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1590,10 +1590,10 @@ TextureImporter:
       name: ghost_all_70
       rect:
         serializedVersion: 2
-        x: 64
-        y: 8
-        width: 16
-        height: 9
+        x: 59
+        y: 13
+        width: 8
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1675,9 +1675,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 129
-        y: 7
-        width: 14
-        height: 10
+        y: 12
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1695,10 +1695,10 @@ TextureImporter:
       name: ghost_all_75
       rect:
         serializedVersion: 2
-        x: 144
-        y: 8
-        width: 16
-        height: 9
+        x: 139
+        y: 13
+        width: 8
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

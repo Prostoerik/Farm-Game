@@ -96,7 +96,7 @@ public class Purchase : MonoBehaviour
 
     private void buyProduct()
     {
-        if (selectedIndex != -1 && int.Parse(productPrices[selectedIndex * 2].text) <= int.Parse(balance.text.Substring(0, balance.text.Length - 1))) {
+        if (selectedIndex != -1 && int.Parse(productPrices[selectedIndex * 2].text) <= int.Parse(balance.text.Substring(0, balance.text.Length - 1)) && GameManager.instance.isBackpackCapable) {
             player.inventory.backpack.Add(itemsToSell[selectedIndex]);
             GameManager.instance.uiManager.RefreshAll();
             GameManager.instance.moneyManager.reduceMoney(int.Parse(productPrices[selectedIndex * 2].text));

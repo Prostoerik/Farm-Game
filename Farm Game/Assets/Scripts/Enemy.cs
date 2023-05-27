@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
 
     private void SpawnLoot()
     {
-        Instantiate(loot, transform.position - new Vector3(Random.Range(-1f, 1f), spriteRenderer.bounds.size.y / 2, 0f), Quaternion.identity);
+        Instantiate(loot, transform.position - new Vector3(0f, spriteRenderer.bounds.size.y / 2, 0f), Quaternion.identity);
     }
 
     private void DestroyEnemy()

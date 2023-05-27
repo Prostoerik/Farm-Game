@@ -49,6 +49,7 @@ public class UI_Manager : MonoBehaviour
                 RefreshInventoryUI("Backpack");
             }
             else
+            if (!GameManager.instance.isDragging)
             {
                 inventoryPanel.SetActive(false);
                 GameManager.instance.isInventoryOpen = false;
@@ -69,6 +70,24 @@ public class UI_Manager : MonoBehaviour
         foreach(var keyValuePair in inventoryUIByName)
         {
             keyValuePair.Value.Refresh();
+        }
+        GameManager.instance.isBackpackCapable = false;
+        foreach (Inventory.Slot slot in GameManager.instance.player.inventory.backpack.slots)
+        {
+            if (slot.IsEmpty)
+            {
+                GameManager.instance.isBackpackCapable = true;
+                break;
+            }
+        }
+        GameManager.instance.isToolbarCapable = false;
+        foreach (Inventory.Slot slot in GameManager.instance.player.inventory.toolbar.slots)
+        {
+            if (slot.IsEmpty)
+            {
+                GameManager.instance.isToolbarCapable = true;
+                break;
+            }
         }
     }
 

@@ -15,8 +15,19 @@ public class Collectable : MonoBehaviour
 
             if(item != null)
             {
-                player.inventory.Add("Backpack", item);
-                Destroy(this.gameObject);
+                if (GameManager.instance.isBackpackCapable)
+                {
+                    player.inventory.Add("Backpack", item);
+                    Destroy(this.gameObject);
+                    GameManager.instance.uiManager.RefreshAll();
+                    return;
+                }
+                if (GameManager.instance.isToolbarCapable)
+                {
+                    player.inventory.Add("Toolbar", item);
+                    Destroy(this.gameObject);
+                    GameManager.instance.uiManager.RefreshAll();
+                }
             }
         }
     }
