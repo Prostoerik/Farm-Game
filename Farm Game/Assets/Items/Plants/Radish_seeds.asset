@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Radish seeds
   icon: {fileID: -1466671077, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
   crop: {fileID: 11400000, guid: cad9e91f075a24645ba10ff797458f8c, type: 2}
-  sellPrice: 2
-  buyPrice: 2
-  openingLevel: 1
+  sellPrice: 7
+  buyPrice: 7
+  openingLevel: 3

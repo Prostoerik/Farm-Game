@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Corn seeds
   icon: {fileID: 1227065148, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
   crop: {fileID: 11400000, guid: fa73d341a5ff2ce45a9e7367511f59a2, type: 2}
-  sellPrice: 2
-  buyPrice: 2
-  openingLevel: 1
+  sellPrice: 3
+  buyPrice: 3
+  openingLevel: 2

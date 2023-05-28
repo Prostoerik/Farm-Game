@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 607880383, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
   crop: {fileID: 11400000, guid: 66d3450113ae3c043bb2f1687203c9c6, type: 2}
   sellPrice: 2
-  buyPrice: 2
-  openingLevel: 1
+  buyPrice: 5
+  openingLevel: 2

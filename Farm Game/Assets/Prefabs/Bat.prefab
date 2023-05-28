@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.7
   idleTime: 1
-  boundsMin: {x: 35.3, y: -6.17}
-  boundsMax: {x: 43.03, y: -1.43}
+  boundsMin: {x: 56.98, y: -30.03}
+  boundsMax: {x: 73.35, y: -15.21}
   loot: {fileID: 1050617583649377303, guid: 09c6490a527c0564088d88283fba7327, type: 3}
   deathAnimationTime: 0.8

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Strawberry seeds
   icon: {fileID: -491948631, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
   crop: {fileID: 11400000, guid: e870c68436e7a6f46bee4b4f30b0f3b9, type: 2}
-  sellPrice: 2
-  buyPrice: 2
-  openingLevel: 2
+  sellPrice: 20
+  buyPrice: 20
+  openingLevel: 5

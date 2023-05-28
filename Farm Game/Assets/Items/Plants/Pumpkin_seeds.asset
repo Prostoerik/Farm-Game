@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Pumpkin seeds
   icon: {fileID: -572555409, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
   crop: {fileID: 11400000, guid: 053efe2ec9e03e34a9ab1a75cdf7d5d2, type: 2}
-  sellPrice: 2
-  buyPrice: 2
-  openingLevel: 1
+  sellPrice: 15
+  buyPrice: 15
+  openingLevel: 5

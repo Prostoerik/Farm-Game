@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Rocky
   icon: {fileID: 1872034177, guid: 5c88c70f3eaf0c145a772870f01581a0, type: 3}
+  crop: {fileID: 0}
+  sellPrice: 2
+  buyPrice: 0
+  openingLevel: 0

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4109803988876075875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.6432, y: -10.2415, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,9 +130,11 @@ MonoBehaviour:
   - {fileID: 1489805337, guid: 93df534785df7fa488d2737f3e54dbf0, type: 3}
   - {fileID: -731787526, guid: 93df534785df7fa488d2737f3e54dbf0, type: 3}
   - {fileID: 2075598697, guid: 93df534785df7fa488d2737f3e54dbf0, type: 3}
+  - {fileID: -1694375171, guid: 93df534785df7fa488d2737f3e54dbf0, type: 3}
   shakeInterval: 0.9
   destroyLoot: {fileID: 1050617583649377303, guid: 2933ef00413837940b1dcaf849be8af4, type: 3}
   mainLoot: {fileID: 1050617583649377303, guid: 9bcd37788086f1e4bbdca213995227ac, type: 3}
+  delayBetweenSprites: 0.15
 --- !u!60 &7760859860587972879
 PolygonCollider2D:
   m_ObjectHideFlags: 0

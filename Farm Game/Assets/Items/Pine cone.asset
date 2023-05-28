@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Pine cone
   icon: {fileID: 1228503530, guid: 072b50622804a3449a5e1329e548d5b0, type: 3}
   crop: {fileID: 0}
-  sellPrice: 0
+  sellPrice: 2
   buyPrice: 0
   openingLevel: 0

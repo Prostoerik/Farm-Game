@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -4602923, guid: 21855f7571c4a8540b725b47a9bd64a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   idleTime: 3
-  boundsMin: {x: 19, y: 14}
-  boundsMax: {x: 27, y: 18}
+  boundsMin: {x: 23.239, y: 22.286}
+  boundsMax: {x: 27.819, y: 25.262}
   loot: {fileID: 1050617583649377303, guid: d489036094687984ca3808a6816e8126, type: 3}
 --- !u!65 &3906371935620972770
 BoxCollider:

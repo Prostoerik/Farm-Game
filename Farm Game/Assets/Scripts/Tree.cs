@@ -8,7 +8,6 @@ public class Tree : MonoBehaviour
 {
     public Sprite[] treeSprites;
     public float shakeInterval = 0.5f;
-    private float shakeTimer = 0f;
 
     private int currentSpriteIndex = 0;
     private bool allowClick = false;
@@ -22,6 +21,7 @@ public class Tree : MonoBehaviour
 
     private bool isTreeActive = true;
     private bool canSpawnLoot = true;
+    public float delayBetweenSprites = 0.01f;
 
     void Start()
     {
@@ -30,26 +30,27 @@ public class Tree : MonoBehaviour
         currentSpriteIndex = Random.Range(0, 4);
     }
 
-    void Update()
-    {
-        shakeTimer -= Time.deltaTime;
+    //void Update()
+    //{
+    //    shakeTimer -= Time.deltaTime;
 
-        if (shakeTimer <= 0)
-        {
-            spriteRenderer.sprite = treeSprites[currentSpriteIndex];
+    //    if (shakeTimer <= 0)
+    //    {
+    //        spriteRenderer.sprite = treeSprites[currentSpriteIndex];
 
-            currentSpriteIndex = (currentSpriteIndex + 1) % treeSprites.Length;
+    //        currentSpriteIndex = (currentSpriteIndex + 1) % treeSprites.Length;
 
-            shakeTimer = shakeInterval;
-        }
-    }
+    //        shakeTimer = shakeInterval;
+    //    }
+    //}
 
     void OnMouseDown()
     {
         if (allowClick && isTreeActive && canSpawnLoot)
         {
-            SpawnLoot();
             canSpawnLoot = false;
+            StartCoroutine(ChangeSprites());
+            SpawnLoot();
             Invoke("ResetSpawnFlag", 10f); 
         }
 
@@ -72,6 +73,16 @@ public class Tree : MonoBehaviour
             gameObject.SetActive(false); 
             isTreeActive = false;
             Invoke("ReturnTreeActive", 60f); 
+        }
+    }
+
+    private System.Collections.IEnumerator ChangeSprites()
+    {
+        for (int i = 0; i < treeSprites.Length; i++)
+        {
+            currentSpriteIndex = i;
+            spriteRenderer.sprite = treeSprites[currentSpriteIndex];
+            yield return new WaitForSeconds(delayBetweenSprites);
         }
     }
 
