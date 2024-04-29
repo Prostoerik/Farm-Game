@@ -2,14 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PlayerData
+{
+    public int lvl;
+    public int money;
+    public string nickname;
+}
+
 public class Player : MonoBehaviour
 {
     public InventoryManager inventory;
 
-    public static int lvl;
+    public int id;
+    public int lvl;
+    public string nickname;
+
     public static float lvlProgress;
     public static float[] expMultiplier = new float[100];
-    public static int money = 200;
+    public int money = 200;
     private SpriteRenderer playerSpriteRenderer;
 
     private void Awake()
@@ -69,11 +80,11 @@ public class Player : MonoBehaviour
 
     public static void addExp(int exp)
     {
-        lvlProgress += exp * expMultiplier[lvl];
+        lvlProgress += exp * expMultiplier[GameManager.instance.player.lvl];
         
         while (lvlProgress >= 1)
         {
-            lvl++;
+            GameManager.instance.player.lvl++;
             lvlProgress--;
         }
 

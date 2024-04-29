@@ -49,7 +49,7 @@ public class Order : MonoBehaviour
     private void createOrder()
     {
         int numItemsToSelect = 3;
-        if (Player.lvl > 1) numItemsToSelect += Player.lvl;
+        if (GameManager.instance.player.lvl > 1) numItemsToSelect += GameManager.instance.player.lvl;
         if (numItemsToSelect > 8) numItemsToSelect = Random.Range(numItemsToSelect / 2, numItemsToSelect);
         else numItemsToSelect = Random.Range(2, numItemsToSelect + 1);
 
@@ -60,7 +60,7 @@ public class Order : MonoBehaviour
         {
             int randomIndex = Random.Range(0, items.Count); 
 
-            if (!selectedIndexes.Contains(randomIndex) && items[randomIndex].data.openingLevel <= Player.lvl)
+            if (!selectedIndexes.Contains(randomIndex) && items[randomIndex].data.openingLevel <= GameManager.instance.player.lvl)
             {
                 required.Add(items[randomIndex]);
                 selectedIndexes.Add(randomIndex);

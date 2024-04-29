@@ -68,11 +68,11 @@ public class Purchase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (curLevel < Player.lvl)
+        if (curLevel < GameManager.instance.player.lvl)
         {
             for (int i = 0, j = 1, k = 2; i < itemsToSell.Count; i++, j += 2, k += 3)
             {
-                if (itemsToSell[i].data.openingLevel > Player.lvl)
+                if (itemsToSell[i].data.openingLevel > GameManager.instance.player.lvl)
                 {
                     buttons[i].onClick.RemoveAllListeners();
                     productPrices[j].enabled = true;
@@ -89,7 +89,7 @@ public class Purchase : MonoBehaviour
                     buttons[i].onClick.AddListener(delegate { selectProduct(buttons[tempIndex]); });
                 }
             }
-            curLevel = Player.lvl;
+            curLevel = GameManager.instance.player.lvl;
         }
     }
 
