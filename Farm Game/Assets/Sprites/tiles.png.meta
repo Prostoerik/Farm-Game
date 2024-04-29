@@ -15871,7 +15871,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 528
+        y: 529
         width: 16
         height: 16
       alignment: 0
@@ -19062,8 +19062,8 @@ TextureImporter:
       name: tiles_902
       rect:
         serializedVersion: 2
-        x: 288
-        y: 464
+        x: 292
+        y: 490
         width: 16
         height: 16
       alignment: 0
@@ -22440,13 +22440,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_1063
+      name: Tree_3
       rect:
         serializedVersion: 2
-        x: 256
-        y: 400
-        width: 16
-        height: 16
+        x: 288
+        y: 384
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25338,13 +25338,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_1201
+      name: Rock_2
       rect:
         serializedVersion: 2
-        x: 384
+        x: 368
         y: 352
         width: 16
-        height: 16
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -35166,13 +35166,118 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_1669
+      name: Tree_1
       rect:
         serializedVersion: 2
-        x: 288
+        x: 225
+        y: 384
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af87f527a2e23a94d8c54b99a711b481
+      internalID: 1648558923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_2
+      rect:
+        serializedVersion: 2
+        x: 256
         y: 384
         width: 32
         height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814243bda5219f342a9473c5a03109ee
+      internalID: 31135858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 352
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665c5fb697cad924c866766578e54e8c
+      internalID: -877002692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree Log
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 325
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87012a4f21d45c43a9217c58dd6c5ca
+      internalID: 1836773884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_1063
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 352
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a35110cd2bffd498579b3f735dcd9f
+      internalID: -841764150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_1201
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 16
+        width: 15
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -35180,8 +35285,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ee6b08c45ec5554c9eac29f18a1d192
-      internalID: 1095162414
+      spriteID: a34ce2ea3fade354897300afaf2e53af
+      internalID: -71950997
       vertices: []
       indices: 
       edges: []
@@ -35473,6 +35578,7 @@ TextureImporter:
       tiles_174: 128713273
       tiles_56: -1491885970
       tiles_891: 491981744
+      Rock_2: 1872034177
       tiles_561: -254265145
       tiles_620: 1395042063
       tiles_277: 495171379
@@ -35531,10 +35637,10 @@ TextureImporter:
       tiles_802: -417129668
       tiles_923: -556348935
       tiles_21: -1510971346
-      tiles_1201: 1872034177
+      tiles_1591: -63162867
       tiles_1549: 1728514467
       tiles_1004: -886543354
-      tiles_1591: -63162867
+      tiles_1201: -71950997
       tiles_496: -1376447372
       tiles_920: -2068950584
       tiles_201: -241633362
@@ -35723,6 +35829,7 @@ TextureImporter:
       tiles_1232: 1269437358
       tiles_97: 316840072
       tiles_807: -1978888873
+      Tree_2: 31135858
       tiles_942: -1506740111
       tiles_1216: -1166760808
       tiles_426: -720512713
@@ -35848,7 +35955,6 @@ TextureImporter:
       tiles_825: -1149075475
       tiles_930: -1117971234
       tiles_769: 294427591
-      tiles_1669: 1095162414
       tiles_890: 1463483064
       tiles_921: 325485906
       tiles_1586: 1977648452
@@ -36067,6 +36173,7 @@ TextureImporter:
       tiles_760: 1286588420
       tiles_1197: -689400979
       tiles_829: -1736721604
+      Tree_1: 1648558923
       tiles_208: 564432528
       tiles_1186: 1725611734
       tiles_1070: -1728936038
@@ -36113,6 +36220,7 @@ TextureImporter:
       tiles_986: 1613663574
       tiles_196: -255574644
       tiles_618: -1609789959
+      Tree Log: 1836773884
       tiles_320: 1581590443
       tiles_234: -425152950
       tiles_367: -405718933
@@ -36278,7 +36386,7 @@ TextureImporter:
       tiles_507: 1585505634
       tiles_872: -1162858568
       tiles_458: -1679894515
-      tiles_1063: -1748201362
+      tiles_1063: -841764150
       tiles_552: 2141319817
       tiles_1182: -127399137
       tiles_393: -1234537415
@@ -36543,6 +36651,7 @@ TextureImporter:
       tiles_1433: 17580126
       tiles_804: 1008613385
       tiles_978: -2099664461
+      Rock_1: -877002692
       tiles_559: -1629248234
       tiles_1150: 456442603
       tiles_99: 163595997
@@ -36727,6 +36836,7 @@ TextureImporter:
       tiles_1395: -1312238335
       tiles_841: -1208873777
       tiles_1333: 1454924871
+      Tree_3: -1748201362
       tiles_1164: 1959549507
       tiles_455: -1462111279
       tiles_1194: 416023729

@@ -1593,8 +1593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
-  - {fileID: 5104115522142580417, guid: b350817f980cd6a42bb7cd537f984129, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   empty: {fileID: 21300000, guid: 694cf23023d647b45aa2b3ae724d42c0, type: 3}
   player: {fileID: 1975870521}
   sellButton: {fileID: 1059698545}
@@ -2777,7 +2777,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 463413550}
   m_HandleRect: {fileID: 463413549}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8948,10 +8948,10 @@ MonoBehaviour:
   panel: {fileID: 949047383}
   saleSlot: {fileID: 4156484212812974327, guid: ec4f601b8c5056c459e5c64fc7abfa05, type: 3}
   itemsToSell:
-  - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
-  - {fileID: 5104115522142580417, guid: b350817f980cd6a42bb7cd537f984129, type: 3}
-  - {fileID: 5104115522142580417, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
-  - {fileID: 5104115522142580417, guid: c706ec86f5b53484bbf1ea6b2ff4393f, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 1975870521}
   empty: {fileID: 21300000, guid: 694cf23023d647b45aa2b3ae724d42c0, type: 3}
   sellButton: {fileID: 858656809}
@@ -31893,7 +31893,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1166841161}
   m_HandleRect: {fileID: 1166841160}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -32529,11 +32529,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 5104115522142580417, guid: b350817f980cd6a42bb7cd537f984129, type: 3}
-  - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
-  - {fileID: 5104115522142580417, guid: c706ec86f5b53484bbf1ea6b2ff4393f, type: 3}
-  - {fileID: 5104115522142580417, guid: 7030ffca34ab58b43b9cc4f9383631ee, type: 3}
-  - {fileID: 5104115522142580417, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1634016409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32621,8 +32621,8 @@ MonoBehaviour:
   cropsSpritePrefab: {fileID: 2446911990339722175, guid: d36fabf2c2a031743a9dce588cc7c22e, type: 3}
   toSeed: {fileID: 11400000, guid: 3600ecb2a1f9c19449724e5cea2292cb, type: 2}
   itemsToSeed:
-  - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
-  - {fileID: 5104115522142580417, guid: b350817f980cd6a42bb7cd537f984129, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   itemsToSeedNames: []
 --- !u!114 &1634016414
 MonoBehaviour:
@@ -32686,7 +32686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NonclickableSprite: {fileID: -848937023, guid: ddcfed96f6219bd4f8eca761a6e4221e, type: 3}
   ClickableSprite: {fileID: 792145403, guid: ddcfed96f6219bd4f8eca761a6e4221e, type: 3}
-  elementToOpen: {fileID: 1432396100}
+  elementToOpen: {fileID: 1638278620}
 --- !u!212 &1638278622
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33902,10 +33902,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsToSell:
-  - {fileID: 5104115522142580417, guid: 7b998612244e2b04c8f06860a568c762, type: 3}
-  - {fileID: 5104115522142580417, guid: b350817f980cd6a42bb7cd537f984129, type: 3}
-  - {fileID: 5104115522142580417, guid: be53334bf56f4434f849ab6a996d2bb1, type: 3}
-  - {fileID: 5104115522142580417, guid: c706ec86f5b53484bbf1ea6b2ff4393f, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   panel: {fileID: 1767870934}
   purchaseSlot: {fileID: 4156484212812974327, guid: fb7eab15f4c577d41bb1b6e9adf96931, type: 3}
   player: {fileID: 1975870521}

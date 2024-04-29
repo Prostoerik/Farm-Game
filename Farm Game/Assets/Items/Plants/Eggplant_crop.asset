@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdc229d34d2ae946841ca77026e79c2, type: 3}
+  m_Name: Eggplant_crop
+  m_EditorClassIdentifier: 
+  timeToGrow: 15
+  yield: {fileID: 4286335385460020833, guid: 348eebc7cb8995042b114724c5d75d12, type: 3}
+  count: 1
+  sprites:
+  - {fileID: 823722751, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: 334859551, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -1029280596, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -1883834205, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: 838593607, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  growthStageTime: 0300000006000000090000000c0000000f000000

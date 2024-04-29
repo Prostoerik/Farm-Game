@@ -2,14 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PlayerData
+{
+    public int lvl;
+    public int money;
+    public string nickname;
+}
+
 public class Player : MonoBehaviour
 {
     public InventoryManager inventory;
 
-    public static int lvl;
+    public int id;
+    public int lvl;
+    public string nickname;
+
     public static float lvlProgress;
     public static float[] expMultiplier = new float[100];
-    public static int money = 200;
+    public int money = 200;
+    private SpriteRenderer playerSpriteRenderer;
 
     private void Awake()
     {
@@ -39,7 +51,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+            Vector3Int position = new Vector3Int((int)transform.position.x, (int)(transform.position.y - 1f), 0);
             if(GameManager.instance.tileManager.isInteractable(position))
             {
                 if (GameManager.instance.tileManager.isPlowed(position) && GameManager.instance.cropsManager.itemsToSeedNames.Contains(inventory.toolbar.slots[GameManager.instance.selectedItemIndex].itemName))
@@ -68,11 +80,11 @@ public class Player : MonoBehaviour
 
     public static void addExp(int exp)
     {
-        lvlProgress += exp * expMultiplier[lvl];
+        lvlProgress += exp * expMultiplier[GameManager.instance.player.lvl];
         
         while (lvlProgress >= 1)
         {
-            lvl++;
+            GameManager.instance.player.lvl++;
             lvlProgress--;
         }
 

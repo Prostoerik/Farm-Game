@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     public bool isDeskOpen;
     public bool isMarketOpen;
 
+    public bool isDragging;
+    public bool isBackpackCapable;
+    public bool isToolbarCapable;
+
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -44,6 +48,9 @@ public class GameManager : MonoBehaviour
         isInventoryOpen = false;
         isDeskOpen = false;
         isMarketOpen = false;
+        isDragging = false;
+        isBackpackCapable = true;
+        isToolbarCapable = true;
 
         player = FindObjectOfType<Player>();
     }

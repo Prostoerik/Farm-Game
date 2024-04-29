@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc29974637a5544faa0a2ffc9b0d908, type: 3}
+  m_Name: Eggplant_seeds
+  m_EditorClassIdentifier: 
+  itemName: Eggplant seeds
+  icon: {fileID: 324853705, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  crop: {fileID: 11400000, guid: cf4f39ca016f8fd45aecf7fafa5f381e, type: 2}
+  sellPrice: 2
+  buyPrice: 7
+  openingLevel: 4

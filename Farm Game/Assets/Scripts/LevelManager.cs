@@ -11,9 +11,9 @@ public class LevelManager : MonoBehaviour
 
     public void levelUpdate()
     {
-        if (Player.lvl != int.Parse(levelText.text)) 
+        if (GameManager.instance.player.lvl != int.Parse(levelText.text)) 
         {
-            levelText.text = Player.lvl.ToString();
+            levelText.text = GameManager.instance.player.lvl.ToString();
         }
         levelBar.fillAmount = Player.lvlProgress;
     }

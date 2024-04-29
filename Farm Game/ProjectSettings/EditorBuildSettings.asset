@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: c9c828b8952d2544f8913857b4efccee
+  - enabled: 0
     path: Assets/Scenes/Fishing.unity
     guid: 16c92cc82b6b0b945a8ceb1769fbe604
   m_configObjects: {}

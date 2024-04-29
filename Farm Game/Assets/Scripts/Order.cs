@@ -48,7 +48,11 @@ public class Order : MonoBehaviour
 
     private void createOrder()
     {
-        int numItemsToSelect = 2;
+        int numItemsToSelect = 3;
+        if (GameManager.instance.player.lvl > 1) numItemsToSelect += GameManager.instance.player.lvl;
+        if (numItemsToSelect > 8) numItemsToSelect = Random.Range(numItemsToSelect / 2, numItemsToSelect);
+        else numItemsToSelect = Random.Range(2, numItemsToSelect + 1);
+
         List<int> selectedIndexes = new List<int>();
         reward = 0;
 
@@ -56,7 +60,7 @@ public class Order : MonoBehaviour
         {
             int randomIndex = Random.Range(0, items.Count); 
 
-            if (!selectedIndexes.Contains(randomIndex))
+            if (!selectedIndexes.Contains(randomIndex) && items[randomIndex].data.openingLevel <= GameManager.instance.player.lvl)
             {
                 required.Add(items[randomIndex]);
                 selectedIndexes.Add(randomIndex);
@@ -67,14 +71,13 @@ public class Order : MonoBehaviour
         {
             requiredItemNames.Add(required[i].data.itemName);
 
-            int randomCount = Random.Range(1, 4);
+            int randomCount = Random.Range(1, 5);
             requiredItemCount.Add(randomCount);
         }
 
-        for (int i = 0; i < required.Count; i++)
+        for (int i = 0, j = 2; i < required.Count; i++, j += 2)
         {
-            if (i == 0) productImages[i + 2].sprite = required[i].data.icon;
-            else productImages[i + 3].sprite = required[i].data.icon;
+            productImages[j].sprite = required[i].data.icon;
             productCount[i].text = requiredItemCount[i].ToString();
         }
 

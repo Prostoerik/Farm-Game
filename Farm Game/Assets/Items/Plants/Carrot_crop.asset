@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdc229d34d2ae946841ca77026e79c2, type: 3}
+  m_Name: Carrot_crop
+  m_EditorClassIdentifier: 
+  timeToGrow: 15
+  yield: {fileID: 2440652559377058243, guid: c706ec86f5b53484bbf1ea6b2ff4393f, type: 3}
+  count: 1
+  sprites:
+  - {fileID: 1757320110, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: -2058075180, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: 1628263618, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: 394487091, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  - {fileID: 2033350084, guid: 8bb2f4823c2f78649bcfb55d13ce7ab6, type: 3}
+  growthStageTime: 0300000006000000090000000c0000000f000000
