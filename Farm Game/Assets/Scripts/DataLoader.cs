@@ -5,36 +5,26 @@ using UnityEngine;
 
 public class DataLoader : MonoBehaviour
 {
-    //[SerializeField] private TMP_InputField nameInput;
-    //[SerializeField] private Palette main, second;
-    //[SerializeField] private WebManager manager;
-    //[Space][SerializeField] private Color startMainColor, startSecondColor;
-    //public void LoadData()
-    //{
-    //    nameInput.text = WebManager.userData.playerData.nickname;
-    //    if (WebManager.userData.playerData.colorMain != "Null")
-    //    {
-    //        main.SetImageColor(JsonUtility.FromJson<Color>(WebManager.userData.playerData.colorMain));
-    //    }
-    //    else
-    //    {
-    //        main.SetImageColor(startMainColor);
-    //    }
+    public void LoadData()
+    {
+        GameManager.instance.player.nickname = WebManager.userData.playerData.nickname;
 
-    //    if (WebManager.userData.playerData.colorSecond != "Null")
-    //    {
-    //        second.SetImageColor(JsonUtility.FromJson<Color>(WebManager.userData.playerData.colorSecond));
-    //    }
-    //    else
-    //    {
-    //        second.SetImageColor(startSecondColor);
-    //    }
-    //}
+        GameManager.instance.player.lvl = WebManager.userData.playerData.lvl;
+        GameManager.instance.lvlManager.levelUpdate();
+
+        GameManager.instance.player.money = WebManager.userData.playerData.balance;
+        GameManager.instance.moneyManager.moneyUpdate();
+
+        GameManager.instance.player.id = WebManager.userData.playerData.id;
+    }
 
 
-    //public void SaveData()
-    //{
-    //    var player = WebManager.userData.playerData;
-    //    manager.SaveData(player.id, player.nickname, player.colorMain, player.colorSecond);
-    //}
+    public void SaveData()
+    {
+        var nickname = GameManager.instance.player.nickname;
+        var lvl = GameManager.instance.player.lvl;
+        var balance = GameManager.instance.player.money;
+        var id = GameManager.instance.player.id;
+        WebManager.instance.SaveData(id, nickname, balance, lvl);
+    }
 }

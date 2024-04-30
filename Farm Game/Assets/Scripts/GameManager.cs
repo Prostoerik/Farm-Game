@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public CropsManager cropsManager;
     public LevelManager lvlManager;
     public MoneyManager moneyManager;
+    public DataLoader dataLoader;
 
     public Player player;
 
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
         cropsManager = GetComponent<CropsManager>();
         lvlManager = GetComponent<LevelManager>();
         moneyManager = GetComponent<MoneyManager>();
+        dataLoader = GetComponent<DataLoader>();
         selectedItemIndex = 0;
         isInventoryOpen = false;
         isDeskOpen = false;
@@ -53,5 +55,7 @@ public class GameManager : MonoBehaviour
         isToolbarCapable = true;
 
         player = FindObjectOfType<Player>();
+
+        dataLoader.LoadData();
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
@@ -21,6 +20,7 @@ public class Error
 
 public class WebManager : MonoBehaviour
 {
+    public static WebManager instance;
     public static UserData userData = new UserData();
     [SerializeField] private string targetURL;
 
@@ -41,11 +41,24 @@ public class WebManager : MonoBehaviour
         return JsonUtility.FromJson<UserData>(data);
     }
 
-    private void Start()
+    //private void Start()
+    //{
+    //    userData.error = new Error() { errorText = "text", isError = true };
+    //    userData.playerData = new PlayerData() { lvl = GameManager.instance.player.lvl, balance = GameManager.instance.player.money };
+    //    //print(GetUserData(userData));
+    //}
+
+    private void Awake()
     {
-        userData.error = new Error() { errorText = "text", isError = true };
-        userData.playerData = new PlayerData() { lvl = GameManager.instance.player.lvl, money = GameManager.instance.player.money };
-        //print(GetUserData(userData));
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Login(string login, string password)
@@ -67,6 +80,7 @@ public class WebManager : MonoBehaviour
         StopAllCoroutines();
         if (CheckString(login) && CheckString(password) && CheckString(password2) && CheckString(nickname) && password == password2)
         {
+            Debug.Log("Here");
             Registering(login, password, password2, nickname);
         }
         else
@@ -85,7 +99,7 @@ public class WebManager : MonoBehaviour
     public bool CheckString(string toCheck)
     {
         toCheck = toCheck.Trim();
-        if (toCheck.Length > 4 && toCheck.Length < 16)
+        if (toCheck.Length > 2 && toCheck.Length < 16)
         {
             return true;
         }
@@ -114,6 +128,7 @@ public class WebManager : MonoBehaviour
 
     public void SaveProgress(int id, string nickname, int balance, int level)
     {
+        Debug.Log("Here");
         WWWForm form = new WWWForm();
         form.AddField("type", RequestType.save.ToString());
         form.AddField("id", id);
@@ -143,6 +158,7 @@ public class WebManager : MonoBehaviour
                         userData = data;
                         if (type == RequestType.logging)
                         {
+                            print(GetUserData(userData));
                             OnLogged.Invoke();
                         }
                         else
