@@ -56,6 +56,6 @@ public class GameManager : MonoBehaviour
 
         player = FindObjectOfType<Player>();
 
-        dataLoader.LoadData();
+        //dataLoader.LoadData();
     }
 }

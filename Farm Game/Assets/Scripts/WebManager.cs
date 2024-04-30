@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 public class UserData
 {
     public PlayerData playerData;
+    public InventoryData inventoryData;
     public Error error;
 }
 
@@ -90,10 +91,10 @@ public class WebManager : MonoBehaviour
         }
     }
 
-    public void SaveData(int id, string nickname, int balance, int level)
+    public void SaveData(int id, string nickname, int balance, int level, float lvlProgress, string backpack, string toolbar)
     {
         StopAllCoroutines();
-        SaveProgress(id, nickname, balance, level);
+        SaveProgress(id, nickname, balance, level, lvlProgress, backpack, toolbar);
     }
 
     public bool CheckString(string toCheck)
@@ -126,15 +127,17 @@ public class WebManager : MonoBehaviour
         StartCoroutine(SendData(form, RequestType.register));
     }
 
-    public void SaveProgress(int id, string nickname, int balance, int level)
+    public void SaveProgress(int id, string nickname, int balance, int level, float lvlProgress, string backpack, string toolbar)
     {
-        Debug.Log("Here");
         WWWForm form = new WWWForm();
         form.AddField("type", RequestType.save.ToString());
         form.AddField("id", id);
         form.AddField("balance", balance);
-        form.AddField("level", level);
+        form.AddField("lvl", level);
+        form.AddField("lvlProgress", lvlProgress.ToString());
         form.AddField("nickname", nickname);
+        form.AddField("backpack", backpack);
+        form.AddField("toolbar", toolbar);
         StartCoroutine(SendData(form, RequestType.save));
     }
 
@@ -155,6 +158,8 @@ public class WebManager : MonoBehaviour
                 {
                     if (type != RequestType.save)
                     {
+                        data.inventoryData.backpackData = JsonUtility.FromJson<Inventory>(data.inventoryData.backpack);
+                        data.inventoryData.toolbarData = JsonUtility.FromJson<Inventory>(data.inventoryData.toolbar);
                         userData = data;
                         if (type == RequestType.logging)
                         {
@@ -170,6 +175,7 @@ public class WebManager : MonoBehaviour
                 else
                 {
                     userData = data;
+
                     OnError.Invoke();
                 }
             }

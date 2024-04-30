@@ -7,6 +7,7 @@ public class PlayerData
 {
     public int id;
     public int lvl;
+    public float lvlProgress;
     public int balance;
     public string nickname;
 }
@@ -27,12 +28,13 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         inventory = GetComponent<InventoryManager>();
+        GameManager.instance.dataLoader.LoadData();
     }
 
     private void Start()
     {
-        lvl = 1;
-        lvlProgress = 0;
+        //lvl = 1;
+        //lvlProgress = 0;
         expMultiplier[1] = 0.1f;
         expMultiplier[2] = 0.07f;
         expMultiplier[3] = 0.04f;

@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class InventoryData
+{
+    public string backpack;
+    public string toolbar;
+    [System.NonSerialized]
+    public Inventory backpackData;
+    [System.NonSerialized]
+    public Inventory toolbarData;
+}
+
 public class InventoryManager : MonoBehaviour
 {
     public Dictionary<string, Inventory> inventoryByName = new Dictionary<string, Inventory>();
@@ -16,8 +27,8 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        backpack = new Inventory(backpackSlotCount);
-        toolbar = new Inventory(toolbarSlotCount);
+        backpack = WebManager.userData.inventoryData.backpackData;
+        toolbar = WebManager.userData.inventoryData.toolbarData;
 
         inventoryByName.Add("Backpack", backpack);
         inventoryByName.Add("Toolbar", toolbar);

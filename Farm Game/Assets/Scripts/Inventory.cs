@@ -12,6 +12,7 @@ public class Inventory
         public int count;
         public int maxAllowed;
 
+        [System.NonSerialized]
         public Sprite icon;
 
         public Slot()
