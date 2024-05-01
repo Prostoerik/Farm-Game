@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using static Inventory;
-using static UnityEditor.Progress;
 
 public class DataLoader : MonoBehaviour             
 {
@@ -19,9 +18,10 @@ public class DataLoader : MonoBehaviour
         GameManager.instance.moneyManager.moneyUpdate();
 
         GameManager.instance.player.id = WebManager.userData.playerData.id;
-        print(WebManager.userData.inventoryData.backpackData.slots[0].itemName);
-        GameManager.instance.player.inventory.backpack = WebManager.userData.inventoryData.backpackData;
-        GameManager.instance.player.inventory.toolbar = WebManager.userData.inventoryData.toolbarData;
+        if (WebManager.userData.inventoryData.backpackData.slots.Count != 0)
+            GameManager.instance.player.inventory.backpack = WebManager.userData.inventoryData.backpackData;
+        if (WebManager.userData.inventoryData.toolbarData.slots.Count != 0)
+            GameManager.instance.player.inventory.toolbar = WebManager.userData.inventoryData.toolbarData;
 
         foreach (Slot slot in GameManager.instance.player.inventory.backpack.slots)
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
@@ -150,10 +151,12 @@ public class WebManager : MonoBehaviour
             if (www.result != UnityWebRequest.Result.Success)
             {
                 Debug.Log(www.error);
+                www.Dispose();
             }
             else
             {
                 var data = SetUserData(www.downloadHandler.text);
+                www.Dispose();
                 if (!data.error.isError)
                 {
                     if (type != RequestType.save)

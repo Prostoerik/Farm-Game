@@ -58,4 +58,10 @@ public class GameManager : MonoBehaviour
 
         //dataLoader.LoadData();
     }
+
+    // Метод, вызываемый при выходе из приложения
+    void OnApplicationQuit()
+    {
+        dataLoader.SaveData();
+    }
 }

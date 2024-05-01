@@ -27,8 +27,15 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        backpack = WebManager.userData.inventoryData.backpackData;
-        toolbar = WebManager.userData.inventoryData.toolbarData;
+        if (WebManager.userData.inventoryData.backpackData.slots.Count != 0)
+            backpack = WebManager.userData.inventoryData.backpackData;
+        else
+            backpack = new Inventory(backpackSlotCount);
+       
+        if (WebManager.userData.inventoryData.toolbarData.slots.Count != 0)
+            toolbar = WebManager.userData.inventoryData.toolbarData;
+        else
+            toolbar = new Inventory(toolbarSlotCount);
 
         inventoryByName.Add("Backpack", backpack);
         inventoryByName.Add("Toolbar", toolbar);
