@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using static Inventory;
+using static UnityEditor.Progress;
 
 public class DataLoader : MonoBehaviour             
 {
@@ -41,25 +42,35 @@ public class DataLoader : MonoBehaviour
         //GameManager.instance.uiManager.RefreshAll();
     }
 
-    public void LoadSprite(ref Sprite spriteToChange, string prefabName)
+    public void LoadSprite(ref Sprite spriteToChange, string itemName)
     {
-        // Загружаем префаб по его имени
-        GameObject prefab = Resources.Load<GameObject>(prefabName + ".prefab");
-        print("Assets/Prefabs/" + prefabName + ".prefab");
-
-        if (prefab == null)
+        foreach (Item item in GameManager.instance.itemManager.items)
         {
-            Debug.LogError("Prefab with name " + prefabName + " not found!");
-            return;
+            // Проверяем, соответствует ли название элемента искомому названию
+            if (item.data.itemName == itemName)
+            {
+                // Если соответствует, выводим этот элемент
+                spriteToChange = item.data.icon;
+                break;
+            }
         }
+        // Загружаем префаб по его имени
+        //GameObject prefab = Resources.Load<GameObject>(prefabName + ".prefab");
+        //print("Assets/Prefabs/" + prefabName + ".prefab");
 
-        // Получаем спрайт из префаба
-        Sprite sprite = prefab.GetComponent<SpriteRenderer>().sprite;
+        //if (prefab == null)
+        //{
+        //    Debug.LogError("Prefab with name " + prefabName + " not found!");
+        //    return;
+        //}
 
-        if (sprite != null)
-            spriteToChange = sprite;
+        //// Получаем спрайт из префаба
+        //Sprite sprite = prefab.GetComponent<SpriteRenderer>().sprite;
 
-        DestroyImmediate(prefab);
+        //if (sprite != null)
+        //    spriteToChange = sprite;
+
+        //DestroyImmediate(prefab);
     }
 
 
