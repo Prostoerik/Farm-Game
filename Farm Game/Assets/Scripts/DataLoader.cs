@@ -10,6 +10,9 @@ public class DataLoader : MonoBehaviour
     {
         GameManager.instance.player.nickname = WebManager.userData.playerData.nickname;
 
+        Vector3 newPosition = new Vector3(WebManager.userData.playerData.x_pos, WebManager.userData.playerData.y_pos, 0f);
+        GameManager.instance.player.transform.position = newPosition;
+
         GameManager.instance.player.lvl = WebManager.userData.playerData.lvl;
         Player.lvlProgress = WebManager.userData.playerData.lvlProgress;
         GameManager.instance.lvlManager.levelUpdate();
@@ -46,31 +49,12 @@ public class DataLoader : MonoBehaviour
     {
         foreach (Item item in GameManager.instance.itemManager.items)
         {
-            // Проверяем, соответствует ли название элемента искомому названию
             if (item.data.itemName == itemName)
             {
-                // Если соответствует, выводим этот элемент
                 spriteToChange = item.data.icon;
                 break;
             }
         }
-        // Загружаем префаб по его имени
-        //GameObject prefab = Resources.Load<GameObject>(prefabName + ".prefab");
-        //print("Assets/Prefabs/" + prefabName + ".prefab");
-
-        //if (prefab == null)
-        //{
-        //    Debug.LogError("Prefab with name " + prefabName + " not found!");
-        //    return;
-        //}
-
-        //// Получаем спрайт из префаба
-        //Sprite sprite = prefab.GetComponent<SpriteRenderer>().sprite;
-
-        //if (sprite != null)
-        //    spriteToChange = sprite;
-
-        //DestroyImmediate(prefab);
     }
 
 
@@ -83,8 +67,9 @@ public class DataLoader : MonoBehaviour
         var id = GameManager.instance.player.id;
         var backpack = GameManager.instance.player.inventory.backpack;
         var toolbar = GameManager.instance.player.inventory.toolbar;
-        print(JsonUtility.ToJson(backpack));
-        print(JsonUtility.ToJson(toolbar));
-        WebManager.instance.SaveData(id, nickname, balance, lvl, lvlProgress, JsonUtility.ToJson(backpack), JsonUtility.ToJson(toolbar));
+        var x_pos = GameManager.instance.player.transform.position.x;
+        var y_pos = GameManager.instance.player.transform.position.y;
+        print(GameManager.instance.cropsManager.crops);
+        WebManager.instance.SaveData(id, nickname, balance, lvl, lvlProgress, x_pos, y_pos, JsonUtility.ToJson(backpack), JsonUtility.ToJson(toolbar));
     }
 }

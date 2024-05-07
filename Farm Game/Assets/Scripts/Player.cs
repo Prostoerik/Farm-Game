@@ -8,6 +8,8 @@ public class PlayerData
     public int id;
     public int lvl;
     public float lvlProgress;
+    public float x_pos;
+    public float y_pos;
     public int balance;
     public string nickname;
 }

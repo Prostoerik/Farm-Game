@@ -24,13 +24,36 @@ public class WebManager : MonoBehaviour
 {
     public static WebManager instance;
     public static UserData userData = new UserData();
+
+    private const string USER_ID_KEY = "user_id";
+
     [SerializeField] private string targetURL;
 
     [SerializeField] private UnityEvent OnLogged, OnRegistered, OnError;
 
     public enum RequestType
     {
-        logging, register, save
+        logging, loggingByID, register, save
+    }
+
+    // Статический метод для получения идентификатора пользователя из PlayerPrefs
+    public static int GetUserID()
+    {
+        return PlayerPrefs.GetInt(USER_ID_KEY, -1); // Возвращаем -1, если значение не найдено
+    }
+
+    // Статический метод для сохранения идентификатора пользователя в PlayerPrefs
+    public static void SetUserID(int userID)
+    {
+        PlayerPrefs.SetInt(USER_ID_KEY, userID);
+        PlayerPrefs.Save(); // Сохраняем изменения
+    }
+
+    // Метод для удаления идентификатора пользователя из PlayerPrefs
+    public static void ClearUserID()
+    {
+        PlayerPrefs.DeleteKey(USER_ID_KEY);
+        PlayerPrefs.Save(); // Сохраняем изменения
     }
 
     public string GetUserData(UserData data)
@@ -92,10 +115,16 @@ public class WebManager : MonoBehaviour
         }
     }
 
-    public void SaveData(int id, string nickname, int balance, int level, float lvlProgress, string backpack, string toolbar)
+    public void SaveData(int id, string nickname, int balance, int level, float lvlProgress, float x_pos, float y_pos, string backpack, string toolbar)
     {
         StopAllCoroutines();
-        SaveProgress(id, nickname, balance, level, lvlProgress, backpack, toolbar);
+        SaveProgress(id, nickname, balance, level, lvlProgress, x_pos, y_pos, backpack, toolbar);
+    }
+
+    public void LoginByID(int id)
+    {
+        StopAllCoroutines();
+        LoggingByID(id);
     }
 
     public bool CheckString(string toCheck)
@@ -117,6 +146,14 @@ public class WebManager : MonoBehaviour
         StartCoroutine(SendData(form, RequestType.logging));
     }
 
+    public void LoggingByID(int id)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("type", RequestType.loggingByID.ToString());
+        form.AddField("id", id);
+        StartCoroutine(SendData(form, RequestType.loggingByID));
+    }
+
     public void Registering(string login, string password1, string password2, string nickname)
     {
         WWWForm form = new WWWForm();
@@ -128,7 +165,7 @@ public class WebManager : MonoBehaviour
         StartCoroutine(SendData(form, RequestType.register));
     }
 
-    public void SaveProgress(int id, string nickname, int balance, int level, float lvlProgress, string backpack, string toolbar)
+    public void SaveProgress(int id, string nickname, int balance, int level, float lvlProgress, float x_pos, float y_pos, string backpack, string toolbar)
     {
         WWWForm form = new WWWForm();
         form.AddField("type", RequestType.save.ToString());
@@ -136,6 +173,8 @@ public class WebManager : MonoBehaviour
         form.AddField("balance", balance);
         form.AddField("lvl", level);
         form.AddField("lvlProgress", lvlProgress.ToString());
+        form.AddField("x_pos", x_pos.ToString());
+        form.AddField("y_pos", y_pos.ToString());
         form.AddField("nickname", nickname);
         form.AddField("backpack", backpack);
         form.AddField("toolbar", toolbar);
@@ -155,6 +194,7 @@ public class WebManager : MonoBehaviour
             }
             else
             {
+                print(www.downloadHandler.text);
                 var data = SetUserData(www.downloadHandler.text);
                 www.Dispose();
                 if (!data.error.isError)
@@ -167,9 +207,14 @@ public class WebManager : MonoBehaviour
                         if (type == RequestType.logging)
                         {
                             print(GetUserData(userData));
+                            SetUserID(data.playerData.id);
                             OnLogged.Invoke();
                         }
-                        else
+                        if (type == RequestType.loggingByID)
+                        {
+                            OnLogged.Invoke();
+                        }
+                        if (type == RequestType.register)
                         {
                             OnRegistered.Invoke();
                         }

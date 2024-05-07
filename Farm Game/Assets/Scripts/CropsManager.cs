@@ -44,7 +44,7 @@ public class CropsManager : MonoBehaviour
 
     public List<string> itemsToSeedNames = new List<string>();
 
-    Dictionary<Vector2Int, CropTile> crops = new Dictionary<Vector2Int, CropTile>();
+    public Dictionary<Vector2Int, CropTile> crops = new Dictionary<Vector2Int, CropTile>();
 
     private void Start()
     {
